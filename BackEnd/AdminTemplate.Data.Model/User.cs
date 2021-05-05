@@ -19,6 +19,8 @@ namespace AdminTemplate.Data.Model
 
         public string LastName { get; set; }
 
+        public bool IsDeleted { get; set; }
+
         public virtual IList<UserRole> Roles { get; set; }
     }
 }

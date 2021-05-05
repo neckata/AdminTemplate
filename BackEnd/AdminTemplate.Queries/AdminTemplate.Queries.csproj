@@ -1,0 +1,15 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\AdminTemplate.Api.Common\AdminTemplate.Api.Common.csproj" />
+    <ProjectReference Include="..\AdminTemplate.Api.Models\AdminTemplate.Api.Models.csproj" />
+    <ProjectReference Include="..\AdminTemplate.Data.Access\AdminTemplate.Data.Access.csproj" />
+    <ProjectReference Include="..\AdminTemplate.Data.Model\AdminTemplate.Data.Model.csproj" />
+    <ProjectReference Include="..\AdminTemplate.Security\AdminTemplate.Security.csproj" />
+  </ItemGroup>
+
+</Project>
