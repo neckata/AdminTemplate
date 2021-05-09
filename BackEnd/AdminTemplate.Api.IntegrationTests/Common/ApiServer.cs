@@ -5,7 +5,6 @@ using System.Threading.Tasks;
 using AdminTemplate.Api.IntegrationTests.Helpers;
 using AdminTemplate.Api.Models.Login;
 using AdminTemplate.Api.Models.Users;
-using AdminTemplateBackEnd;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.TestHost;
 using Microsoft.Extensions.Configuration;

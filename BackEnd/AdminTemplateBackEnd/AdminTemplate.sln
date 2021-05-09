@@ -4,6 +4,10 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 VisualStudioVersion = 16.0.31019.35
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AdminTemplate", "AdminTemplate.csproj", "{1D12B62A-FC22-4B0A-BA31-0AA6F23E9487}"
+	ProjectSection(ProjectDependencies) = postProject
+		{EF727741-A65B-4E8C-A5E7-A58BA69AD775} = {EF727741-A65B-4E8C-A5E7-A58BA69AD775}
+		{9BFEFFCE-49BD-4DF7-89DF-CE4A410E784E} = {9BFEFFCE-49BD-4DF7-89DF-CE4A410E784E}
+	EndProjectSection
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AdminTemplate.Api.Common", "..\AdminTemplate.Api.Common\AdminTemplate.Api.Common.csproj", "{EF727741-A65B-4E8C-A5E7-A58BA69AD775}"
 EndProject
@@ -16,13 +20,13 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AdminTemplate.Data.Access",
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AdminTemplate.Data.Model", "..\AdminTemplate.Data.Model\AdminTemplate.Data.Model.csproj", "{9BFEFFCE-49BD-4DF7-89DF-CE4A410E784E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AdminTemplate.Queries", "..\AdminTemplate.Queries\AdminTemplate.Queries.csproj", "{EDF3292D-9B95-49B3-9BA8-0D719D4C2456}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AdminTemplate.Queries", "..\AdminTemplate.Queries\AdminTemplate.Queries.csproj", "{EDF3292D-9B95-49B3-9BA8-0D719D4C2456}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AdminTemplate.Security", "..\AdminTemplate.Security\AdminTemplate.Security.csproj", "{CE4632A4-036A-4A00-8D3D-78E52A51E70B}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AdminTemplate.Security", "..\AdminTemplate.Security\AdminTemplate.Security.csproj", "{CE4632A4-036A-4A00-8D3D-78E52A51E70B}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AdminTemplate.Api.IntegrationTests", "..\AdminTemplate.Api.IntegrationTests\AdminTemplate.Api.IntegrationTests.csproj", "{1C62C732-6033-4290-BD7C-392E996AA5C0}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AdminTemplate.Api.IntegrationTests", "..\AdminTemplate.Api.IntegrationTests\AdminTemplate.Api.IntegrationTests.csproj", "{1C62C732-6033-4290-BD7C-392E996AA5C0}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AdminTemplate.Queries.Tests", "..\AdminTemplate.Queries.Tests\AdminTemplate.Queries.Tests.csproj", "{9ED44B5B-B6F8-471E-AC48-32F96D6BAF89}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AdminTemplate.Queries.Tests", "..\AdminTemplate.Queries.Tests\AdminTemplate.Queries.Tests.csproj", "{9ED44B5B-B6F8-471E-AC48-32F96D6BAF89}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

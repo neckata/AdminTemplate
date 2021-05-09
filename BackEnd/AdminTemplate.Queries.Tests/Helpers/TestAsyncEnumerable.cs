@@ -5,10 +5,11 @@ using System.Linq;
 using System.Linq.Expressions;
 using System.Threading;
 using System.Threading.Tasks;
+using Microsoft.EntityFrameworkCore.Query.Internal;
 
 namespace AdminTemplate.Queries.Tests.Helpers
 {
-    public class TestAsyncEnumerable<T> : IAsyncEnumerable<T>, IQueryable<T>
+    public class TestAsyncEnumerable<T> : IAsyncEnumerable<T>, IQueryable<T>, IAsyncEnumerableAccessor<T>
     {
         private IQueryable<T> _query;
 
@@ -22,7 +23,7 @@ namespace AdminTemplate.Queries.Tests.Helpers
             return _query.GetEnumerator();
         }
 
-        public IAsyncEnumerator<T> GetAsyncEnumerator(CancellationToken cancellationToken = default)
+        public IAsyncEnumerator<T> GetEnumerator()
         {
             return (IAsyncEnumerator<T>)new TestAsyncEnumerable<T>.Enumerator(this._query);
         }
@@ -41,7 +42,7 @@ namespace AdminTemplate.Queries.Tests.Helpers
                 _items = items.GetEnumerator();
             }
 
-            public bool MoveNext(CancellationToken cancellationToken)
+            public async Task<bool> MoveNext(CancellationToken cancellationToken)
             {
                 cancellationToken.ThrowIfCancellationRequested();
                 return _items.MoveNext();
@@ -49,16 +50,6 @@ namespace AdminTemplate.Queries.Tests.Helpers
 
             void IDisposable.Dispose()
             {
-            }
-
-            public ValueTask<bool> MoveNextAsync()
-            {
-                throw new NotImplementedException();
-            }
-
-            public ValueTask DisposeAsync()
-            {
-                throw new NotImplementedException();
             }
         }
 
