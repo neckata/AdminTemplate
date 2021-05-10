@@ -28,11 +28,6 @@ namespace AdminTemplate
                 .AddJsonFile($"appsettings.{env.EnvironmentName}.json", true)
                 .AddEnvironmentVariables();
 
-            if (env.IsDevelopment())
-            {
-                builder.AddApplicationInsightsSettings(developerMode: true);
-            }
-
             Configuration = builder.Build();
         }
 
@@ -52,8 +47,6 @@ namespace AdminTemplate
 
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddApplicationInsightsTelemetry(Configuration);
-
             ContainerSetup.Setup(services, Configuration);
 
             services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme).AddJwtBearer(JwtBearerDefaults.AuthenticationScheme, (o) =>

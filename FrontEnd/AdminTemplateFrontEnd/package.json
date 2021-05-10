@@ -1,7 +1,6 @@
 {
-  "name": "material-dashboard-angular",
-  "version": "2.5.0",
-  "license": "MIT",
+  "name": "admin-template",
+  "version": "2.0.0",
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
