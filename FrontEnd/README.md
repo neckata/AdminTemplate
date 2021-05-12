@@ -15,6 +15,7 @@ Comes with 5 color filter choices for both the sidebar and the card headers (blu
 
 ## File Structure
 
+```
 admin-template
 ├── README.md
 ├── angular-cli.json
@@ -104,6 +105,8 @@ admin-template
 ├── tsconfig.json
 ├── tslint.json
 └── typings
+
+```
 
 ## Browser Support
 
