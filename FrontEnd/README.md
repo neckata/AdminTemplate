@@ -1,49 +1,23 @@
-**[Material Dashboard Angular](https://www.creative-tim.com/product/material-dashboard-angular2/)** is a free Material Bootstrap Admin with a fresh, new design inspired by Google's Material Design. We are very excited to introduce our take on the material concepts through an easy to use and beautiful set of components. Material Dashboard was built over the popular Bootstrap framework and it comes with a couple of third-party plugins redesigned to fit in with the rest of the elements.
+Using Material Bootstrap Admin with a fresh, new design inspired by Google's Material Design.
 
-Material Dashboard makes use of light, surface and movement. The general layout resembles sheets of paper following multiple different layers, so that the depth and order is obvious. The navigation stays mainly on the left sidebar and the content is on the right inside the main panel.
+Using Bootstrap framework and it comes with a couple of third-party plugins redesigned to fit in with the rest of the elements.
 
-This product came as a result of users asking for a material dashboard after we released our successful [Material Kit](http://www.creative-tim.com/product/material-kit). We developed it based on your feedback and it is a powerful bootstrap admin dashboard, which allows you to build products like admin panels, content managements systems and CRMs.
+The general layout resembles sheets of paper following multiple different layers, so that the depth and order is obvious.
 
-Material Dashboard comes with 5 color filter choices for both the sidebar and the card headers (blue, green, orange, red and purple) and an option to have a background image on the sidebar.
+The navigation stays mainly on the left sidebar and the content is on the right inside the main panel. It makes use of light, surface and movement. 
 
-Material Dashboard uses a framework built by our friend [Federico - Bootstrap Material Design](http://fezvrasta.github.io/bootstrap-material-design/), who did an amazing job creating the backbone for the material effects, animations, ripples and transitions. Big thanks to his team for the effort and forward thinking they put into it.
-
-Special thanks go to:
-[Robert McIntosh](https://github.com/mouse0270/bootstrap-notify) for the notification system.
-[Chartist](https://gionkunz.github.io/chartist-js/) for the wonderful charts.
-We are very excited to share this dashboard with you and we look forward to hearing your feedback!
-
-You can find the Github Repo here.
+Comes with 5 color filter choices for both the sidebar and the card headers (blue, green, orange, red and purple) and an option to have a background image on the sidebar.
 
 ## Table of Contents
 
-* [Demo](#demo)
-* [Documentation](#documentation)
 * [File Structure](#file-structure)
 * [Browser Support](#browser-support)
-* [Resources](#resources)
-* [Reporting Issues](#reporting-issues)
-* [Technical Support or Questions](#technical-support-or-questions)
-* [Licensing](#licensing)
-* [Useful Links](#useful-links)
 
-## Demo
+## File Structure
 
-| Dashboard | User Profile | Tables | Icons | Notifications |
-| --- | --- | --- | --- | --- |
-| [![Start page](https://raw.githubusercontent.com/creativetimofficial/public-assets/master/material-dashboard-angular/dashboard.png?raw=true)](https://demos.creative-tim.com/material-dashboard-angular2/#/dashboard) | [![User profile page](https://raw.githubusercontent.com/creativetimofficial/public-assets/master/material-dashboard-angular/user-profile.png?raw=true)](https://demos.creative-tim.com/material-dashboard-angular2/#/user-profile) | [![Tables page ](https://raw.githubusercontent.com/creativetimofficial/public-assets/master/material-dashboard-angular/tables.png?raw=true)](https://demos.creative-tim.com/material-dashboard-angular2/#/table-list) | [![Icons Page](https://raw.githubusercontent.com/creativetimofficial/public-assets/master/material-dashboard-angular/icons.png?raw=true)](https://demos.creative-tim.com/material-dashboard-angular2/#/maps) | [![Notifications page](https://raw.githubusercontent.com/creativetimofficial/public-assets/master/material-dashboard-angular/notifications.png?raw=true)](https://demos.creative-tim.com/material-dashboard-angular2/#/notifications)
-
-### What's included
-
-Within the download you'll find the following directories and files:
-
-```
-material-dashboard-angular
-├── CHANGELOG.md
-├── LICENSE.md
+admin-template
 ├── README.md
 ├── angular-cli.json
-├── documentation
 ├── e2e
 ├── karma.conf.js
 ├── package-lock.json
@@ -79,11 +53,6 @@ material-dashboard-angular
 │   │   │   ├── dashboard.component.html
 │   │   │   ├── dashboard.component.spec.ts
 │   │   │   └── dashboard.component.ts
-│   │   ├── icons
-│   │   │   ├── icons.component.css
-│   │   │   ├── icons.component.html
-│   │   │   ├── icons.component.spec.ts
-│   │   │   └── icons.component.ts
 │   │   ├── layouts
 │   │   │   └── admin-layout
 │   │   │       ├── admin-layout.component.html
@@ -118,8 +87,6 @@ material-dashboard-angular
 │   │       ├── user-profile.component.spec.ts
 │   │       └── user-profile.component.ts
 │   ├── assets
-│   │   ├── css
-│   │   │   └── demo.css
 │   │   ├── img
 │   │   └── scss
 │   │       ├── core
@@ -138,10 +105,6 @@ material-dashboard-angular
 ├── tslint.json
 └── typings
 
-```
-
 ## Browser Support
 
-At present, we officially aim to support the last two versions of the following browsers:
-
-<img src="https://s3.amazonaws.com/creativetim_bucket/github/browser/chrome.png" width="64" height="64"> <img src="https://s3.amazonaws.com/creativetim_bucket/github/browser/firefox.png" width="64" height="64"> <img src="https://s3.amazonaws.com/creativetim_bucket/github/browser/edge.png" width="64" height="64"> <img src="https://s3.amazonaws.com/creativetim_bucket/github/browser/safari.png" width="64" height="64"> <img src="https://s3.amazonaws.com/creativetim_bucket/github/browser/opera.png" width="64" height="64">
+<img src="https://cdn.icon-icons.com/icons2/2552/PNG/512/chrome_browser_logo_icon_153007.png" width="64" height="64"> <img src="https://cdn.icon-icons.com/icons2/2552/PNG/512/firefox_browser_logo_icon_152991.png" width="64" height="64"> <img src="https://cdn.icon-icons.com/icons2/2552/PNG/512/edge_browser_logo_icon_152998.png" width="64" height="64"> <img src="https://cdn.icon-icons.com/icons2/2552/PNG/512/safari_ios_browser_logo_icon_152966.png" width="64" height="64"> <img src="https://cdn.icon-icons.com/icons2/2552/PNG/512/opera_browser_logo_icon_152972.png" width="64" height="64">
