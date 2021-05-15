@@ -6,13 +6,13 @@ import { RouterModule } from '@angular/router';
 
 
 import { AppRoutingModule } from './app.routing';
-import { ComponentsModule } from './components/components.module';
+import { CoreModule } from './core/core.module';
 
 import { AppComponent } from './app.component';
 import {
   AgmCoreModule
 } from '@agm/core';
-import { AdminLayoutComponent } from './layouts/admin-layout/admin-layout.component';
+import { AdminLayoutComponent } from './modules/layouts/admin-layout/admin-layout.component';
 
 @NgModule({
   imports: [
@@ -20,7 +20,7 @@ import { AdminLayoutComponent } from './layouts/admin-layout/admin-layout.compon
     FormsModule,
     ReactiveFormsModule,
     HttpClientModule,
-    ComponentsModule,
+        CoreModule,
     RouterModule,
     AppRoutingModule,
     AgmCoreModule.forRoot({
