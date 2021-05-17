@@ -21,106 +21,110 @@ FrontEnd
 │  ├─ app
 │  │  ├─ app.component.css
 │  │  ├─ app.component.html
-│  │  ├─ app.component.spec.ts
 │  │  ├─ app.component.ts
 │  │  ├─ app.module.ts
 │  │  ├─ app.routing.ts
-│  │  ├─ configs
-│  │  │  └─ app-settings.config.ts
 │  │  ├─ core
-│  │  │  ├─ authentication
-│  │  │  │  └─ authentication.service.ts
+│  │  │  ├─ constants
 │  │  │  ├─ core.module.ts
-│  │  │  ├─ ensureModuleLoadedOnceGuard.ts
-│  │  │  ├─ footer
-│  │  │  │  ├─ footer.component.css
-│  │  │  │  ├─ footer.component.html
-│  │  │  │  ├─ footer.component.spec.ts
-│  │  │  │  └─ footer.component.ts
 │  │  │  ├─ guards
-│  │  │  │  ├─ admin-guard.ts
 │  │  │  │  ├─ auth.guard.ts
+│  │  │  │  ├─ module-import.guard.ts
 │  │  │  │  └─ no-auth-guard.ts
-│  │  │  ├─ http
-│  │  │  │  ├─ api.service.ts
-│  │  │  │  └─ user
-│  │  │  │     └─ user.service.ts
 │  │  │  ├─ interceptors
 │  │  │  │  ├─ api-prefix.interceptor.ts
 │  │  │  │  ├─ error-handler.interceptor.ts
-│  │  │  │  └─ http.token.interceptor.ts
+│  │  │  │  ├─ http.token.interceptor.ts
+│  │  │  │  └─ token.interceptor.ts
 │  │  │  ├─ logger.service.ts
-│  │  │  ├─ mocks
-│  │  │  │  └─ user.mock.ts
+│  │  │  └─ services
+│  │  │     └─ auth.service.ts
+│  │  ├─ data
+│  │  │  ├─ data.module.ts
+│  │  │  ├─ schema
+│  │  │  │  └─ user.ts
+│  │  │  └─ service
+│  │  │     ├─ json
+│  │  │     │  └─ data.json
+│  │  │     ├─ json-api.service.ts
+│  │  │     └─ user.service.ts
+│  │  ├─ layout
+│  │  │  ├─ admin-layout
+│  │  │  │  ├─ admin-layout.component.html
+│  │  │  │  ├─ admin-layout.component.scss
+│  │  │  │  └─ admin-layout.component.ts
+│  │  │  ├─ auth-layout
+│  │  │  │  ├─ auth-layout.component.css
+│  │  │  │  ├─ auth-layout.component.html
+│  │  │  │  └─ auth-layout.component.ts
+│  │  │  ├─ footer
+│  │  │  │  ├─ footer.component.css
+│  │  │  │  ├─ footer.component.html
+│  │  │  │  └─ footer.component.ts
 │  │  │  ├─ navbar
 │  │  │  │  ├─ navbar.component.css
 │  │  │  │  ├─ navbar.component.html
-│  │  │  │  ├─ navbar.component.spec.ts
 │  │  │  │  └─ navbar.component.ts
-│  │  │  ├─ services
-│  │  │  │  ├─ srv1.service.ts
-│  │  │  │  └─ srv2.service.ts
 │  │  │  └─ sidebar
 │  │  │     ├─ sidebar.component.css
 │  │  │     ├─ sidebar.component.html
-│  │  │     ├─ sidebar.component.spec.ts
 │  │  │     └─ sidebar.component.ts
 │  │  ├─ modules
+│  │  │  ├─ auth
+│  │  │  │  ├─ auth.module.ts
+│  │  │  │  ├─ auth.routing.ts
+│  │  │  │  └─ page
+│  │  │  │     ├─ login
+│  │  │  │     │  ├─ login.component.css
+│  │  │  │     │  ├─ login.component.html
+│  │  │  │     │  └─ login.component.ts
+│  │  │  │     └─ register
+│  │  │  │        ├─ register.component.css
+│  │  │  │        ├─ register.component.html
+│  │  │  │        └─ register.component.ts
 │  │  │  ├─ dashboard
 │  │  │  │  ├─ dashboard.component.css
 │  │  │  │  ├─ dashboard.component.html
-│  │  │  │  ├─ dashboard.component.spec.ts
 │  │  │  │  └─ dashboard.component.ts
-│  │  │  ├─ layouts
-│  │  │  │  └─ admin-layout
-│  │  │  │     ├─ admin-layout.component.html
-│  │  │  │     ├─ admin-layout.component.scss
-│  │  │  │     ├─ admin-layout.component.spec.ts
-│  │  │  │     ├─ admin-layout.component.ts
-│  │  │  │     ├─ admin-layout.module.ts
-│  │  │  │     └─ admin-layout.routing.ts
 │  │  │  ├─ maps
 │  │  │  │  ├─ maps.component.css
 │  │  │  │  ├─ maps.component.html
-│  │  │  │  ├─ maps.component.spec.ts
 │  │  │  │  └─ maps.component.ts
 │  │  │  ├─ notifications
 │  │  │  │  ├─ notifications.component.css
 │  │  │  │  ├─ notifications.component.html
-│  │  │  │  ├─ notifications.component.spec.ts
 │  │  │  │  └─ notifications.component.ts
 │  │  │  ├─ table-list
 │  │  │  │  ├─ table-list.component.css
 │  │  │  │  ├─ table-list.component.html
-│  │  │  │  ├─ table-list.component.spec.ts
 │  │  │  │  └─ table-list.component.ts
 │  │  │  ├─ typography
 │  │  │  │  ├─ typography.component.css
 │  │  │  │  ├─ typography.component.html
-│  │  │  │  ├─ typography.component.spec.ts
 │  │  │  │  └─ typography.component.ts
 │  │  │  └─ user-profile
 │  │  │     ├─ user-profile.component.css
 │  │  │     ├─ user-profile.component.html
-│  │  │     ├─ user-profile.component.spec.ts
 │  │  │     └─ user-profile.component.ts
-│  │  ├─ shared
-│  │  │  ├─ components
-│  │  │  │  ├─ components.module.ts
-│  │  │  │  └─ loader
-│  │  │  │     ├─ loader.component.css
-│  │  │  │     ├─ loader.component.html
-│  │  │  │     ├─ loader.component.spec.ts
-│  │  │  │     └─ loader.component.ts
-│  │  │  ├─ directives
-│  │  │  │  └─ auth.directive.ts
-│  │  │  ├─ models
-│  │  │  │  ├─ server-response.ts
-│  │  │  │  └─ user.model.ts
-│  │  │  └─ pipes
-│  │  │     ├─ capitalize.pipe.ts
-│  │  │     └─ safe.pipe.ts
-│  │  └─ shared.module.ts
+│  │  └─ shared
+│  │     ├─ components
+│  │     │  ├─ control-messages
+│  │     │  │  ├─ control-messages.component.css
+│  │     │  │  ├─ control-messages.component.html
+│  │     │  │  └─ control-messages.component.ts
+│  │     │  └─ spinner
+│  │     │     ├─ spinner.component.css
+│  │     │     ├─ spinner.component.html
+│  │     │     └─ spinner.component.ts
+│  │     ├─ directives
+│  │     │  └─ auth.directive.ts
+│  │     ├─ material.module.ts
+│  │     ├─ pipes
+│  │     │  ├─ capitalize.pipe.ts
+│  │     │  └─ safe.pipe.ts
+│  │     ├─ service
+│  │     │  └─ validation.service.ts
+│  │     └─ shared.module.ts
 │  ├─ assets
 │  │  ├─ i18n
 │  │  │  └─ en.json
