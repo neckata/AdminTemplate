@@ -1,38 +1,63 @@
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NgModule } from '@angular/core';
-import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { HttpClientModule } from '@angular/common/http';
-import { RouterModule } from '@angular/router';
-
 
 import { AppRoutingModule } from './app.routing';
 import { CoreModule } from './core/core.module';
 
 import { AppComponent } from './app.component';
-import {
-  AgmCoreModule
-} from '@agm/core';
-import { AdminLayoutComponent } from './modules/layouts/admin-layout/admin-layout.component';
+import { AgmCoreModule } from '@agm/core';
+import { SharedModule } from './shared/shared.module';
+import { BrowserModule } from '@angular/platform-browser';
+import { AuthModule } from './modules/auth/auth.module';
+import { AuthLayoutComponent } from './layout/auth-layout/auth-layout.component';
+import { AdminLayoutComponent } from './layout/admin-layout/admin-layout.component';
+import { FooterComponent } from './layout/footer/footer.component';
+import { NavbarComponent } from './layout/navbar/navbar.component';
+import { SidebarComponent } from './layout/sidebar/sidebar.component';
+import { UserProfileComponent } from './modules/user-profile/user-profile.component';
+import { DashboardComponent } from './modules/dashboard/dashboard.component';
+import { TableListComponent } from './modules/table-list/table-list.component';
+import { TypographyComponent } from './modules/typography/typography.component';
+import { MapsComponent } from './modules/maps/maps.component';
+import { NotificationsComponent } from './modules/notifications/notifications.component';
 
 @NgModule({
-  imports: [
-    BrowserAnimationsModule,
-    FormsModule,
-    ReactiveFormsModule,
-    HttpClientModule,
-        CoreModule,
-    RouterModule,
-    AppRoutingModule,
-    AgmCoreModule.forRoot({
-        apiKey: 'AIzaSyALlmqcnvJgWug07siV2jV0BNFsHqve1dw'
-    })
-  ],
-  declarations: [
-    AppComponent,
-    AdminLayoutComponent,
+    imports: [
+        // angular
+        BrowserModule,
 
-  ],
-  providers: [],
-  bootstrap: [AppComponent]
+        // 3rd party
+        AuthModule,
+
+        // core & shared
+        CoreModule,
+        SharedModule,
+
+        // app
+        AppRoutingModule,
+
+        BrowserAnimationsModule,
+        AgmCoreModule.forRoot({
+            apiKey: 'AIzaSyALlmqcnvJgWug07siV2jV0BNFsHqve1dw'
+        })
+    ],
+    declarations: [
+        AppComponent,
+        AuthLayoutComponent,
+        AdminLayoutComponent,
+        FooterComponent,
+        NavbarComponent,
+        SidebarComponent,
+
+        DashboardComponent,
+        UserProfileComponent,
+        TableListComponent,
+        TypographyComponent,
+        MapsComponent,
+        NotificationsComponent,
+
+    ],
+    providers: [],
+    bootstrap: [AppComponent]
 })
 export class AppModule { }
