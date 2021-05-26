@@ -1,22 +1,22 @@
 <form>
 	<div class="form-group">
 		<label class="d-block">
-			<input type="text" class="form-control" [placeholder]="'Firstname'">
+			<input type="text" class="form-control" placeholder="{{'auth.firstname' | translate}}">
 		</label>
 	</div>
 	<div class="form-group">
 		<label class="d-block">
-			<input type="text" class="form-control" [placeholder]="'Lastname'">
+			<input type="text" class="form-control" placeholder="{{'auth.lastname' | translate}}">
 		</label>
 	</div>
 	<div class="form-group">
 		<label class="d-block">
-			<input type="text" class="form-control" [placeholder]="'Username'">
+			<input type="text" class="form-control" placeholder="{{'auth.username' | translate}}">
 		</label>
 	</div>
 	<div class="form-group">
 		<label class="d-block">
-			<input type="text" class="form-control" [placeholder]="'Password'">
+			<input type="text" class="form-control" placeholder="{{'auth.password' | translate}}">
 		</label>
 	</div>
 	<div class="form-group">
@@ -24,5 +24,5 @@
 			<span>Sign Up</span>
 		</button>
 	</div>
-	<a [routerLink]="['/auth/login']">Got an account already? Log in here!</a>
+	<a [routerLink]="['/auth/login']">{{'auth.registered' | translate}}</a>
 </form>

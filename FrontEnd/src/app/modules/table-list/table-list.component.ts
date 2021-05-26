@@ -5,11 +5,5 @@ import { Component, OnInit } from '@angular/core';
   templateUrl: './table-list.component.html',
   styleUrls: ['./table-list.component.css']
 })
-export class TableListComponent implements OnInit {
-
-  constructor() { }
-
-  ngOnInit() {
-  }
-
+export class TableListComponent {
 }

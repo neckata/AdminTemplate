@@ -1,4 +1,4 @@
-import { Component, OnInit, OnDestroy } from '@angular/core';
+import { Component, OnDestroy } from '@angular/core';
 import { Router } from '@angular/router';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { tap, delay, finalize, catchError } from 'rxjs/operators';
@@ -10,22 +10,16 @@ import { AuthService } from '../../../../core/services/auth.service';
     templateUrl: './login.component.html',
     styleUrls: ['./login.component.css']
 })
-export class LoginComponent implements OnInit, OnDestroy {
+export class LoginComponent implements OnDestroy {
     error: string;
     isLoading: boolean;
     loginForm: FormGroup;
 
     private sub = new Subscription();
 
-    constructor(
-        private formBuilder: FormBuilder,
-        private router: Router,
-        private authService: AuthService
-    ) {
+    constructor(private formBuilder: FormBuilder, private router: Router, private authService: AuthService) {
         this.buildForm();
     }
-
-    ngOnInit() { }
 
     get f() {
         return this.loginForm.controls;

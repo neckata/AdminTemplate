@@ -1,13 +1,7 @@
 import { Injectable } from '@angular/core';
 import { of, Observable, throwError } from 'rxjs';
 
-import { User } from '../../data/schema/user';
-
-interface LoginContextInterface {
-    username: string;
-    password: string;
-    token: string;
-}
+import { LoginContextInterface, User } from '../../data/schema/user';
 
 const defaultUser = {
     username: 'admin',
