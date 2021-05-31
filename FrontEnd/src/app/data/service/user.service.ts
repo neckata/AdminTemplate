@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
-import { User } from '../schema/user';
+import { UserInfo } from '../schema/user';
 import { JsonApiService } from './json-api.service';
 
 @Injectable({
@@ -10,7 +10,7 @@ export class UserService {
     constructor(private jsonApiService: JsonApiService) {
     }
 
-    public getUsers(): Observable<User> {
+    public getUsers(): Observable<UserInfo[]> {
         return this.jsonApiService.get("/users");
     }
 }

@@ -1,0 +1,45 @@
+{
+  "navigation": {
+    "title": "Template"
+  },
+  "navBar": {
+    "organisation": "Organisation",
+    "aboutUs": "About us",
+    "blog": "Blog",
+    "toggle": "Toggle navigation"
+  },
+  "helper": {
+    "loading": "Loading"
+  },
+  "sidebar": {
+    "stats": "Stats",
+    "actions": "Some Actions",
+    "action1": "Mike John responded to your email",
+    "action2": "You have 5 new tasks",
+    "action3": "You're now friend with Andrew",
+    "action4": "Another Notification",
+    "action5": "Another One",
+    "account": "Account",
+    "search": "Search..."
+  },
+  "layout": {
+    "sidebar": "Sidebar Filters",
+    "images": "Images"
+  },
+  "auth": {
+    "username": "Username",
+    "password": "Password",
+    "noAccount": "Don't have an account? Sign up here!",
+    "submit": "Submit",
+    "firstname": "First Name",
+    "lastname": "Last Name",
+    "registered": "Got an account already? Log in here!"
+  },
+  "tables": {
+    "header1": "Simple Table",
+    "header2": "Table on Plain Background",
+    "desc": "Here is a subtitle for this table",
+    "noData": "No data matching the filter",
+    "filter": "Filter"
+  }
+}

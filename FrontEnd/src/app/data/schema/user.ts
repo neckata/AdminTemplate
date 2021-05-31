@@ -9,3 +9,11 @@ export interface LoginContextInterface {
     password: string;
     token: string;
 }
+
+export class UserInfo {
+    id: number;
+    name: string;
+    country: string;
+    city: string;
+    salary: string;
+}

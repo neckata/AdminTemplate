@@ -2,7 +2,38 @@
   "users": [
     {
       "id": 1,
-      "username": "test"
+      "name": "Dakota Rice",
+      "country": "Niger",
+      "city": "Oud-Turnhout",
+      "salary": "$36,738"
+    },
+    {
+      "id": 2,
+      "name": "Minerva Hooper",
+      "country": "Curaçao",
+      "city": "Sinaai-Waas",
+      "salary": "$16,738"
+    },
+    {
+      "id": 3,
+      "name": "Sage Rodriguez",
+      "country": "Netherlands",
+      "city": "Baileux",
+      "salary": "$26,738"
+    },
+    {
+      "id": 4,
+      "name": "Philip Chaney",
+      "country": "Korea, South",
+      "city": "Overland Park",
+      "salary": "$56,738"
+    },
+    {
+      "id": 5,
+      "name": "Doris Greene",
+      "country": "Malawi",
+      "city": "Feldkirchen in Kärnten",
+      "salary": "$46,738"
     }
   ]
 }

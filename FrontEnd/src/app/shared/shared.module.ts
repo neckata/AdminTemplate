@@ -10,6 +10,8 @@ import { MaterialModule } from './material.module';
 
 import { ControlMessagesComponent } from './components/control-messages/control-messages.component';
 import { SpinnerComponent } from './components/spinner/spinner.component';
+import { ColumnsToArrayPipe } from './pipes/columns-to-array.pipe';
+import { ValuesPipe } from './pipes/values.pipe';
 
 @NgModule({
     imports: [
@@ -32,11 +34,17 @@ import { SpinnerComponent } from './components/spinner/spinner.component';
         RouterModule,
         MaterialModule,
         ReactiveFormsModule,
-
+        ColumnsToArrayPipe,
+        ValuesPipe,
         ControlMessagesComponent,
         SpinnerComponent
     ],
-    declarations: [ControlMessagesComponent, SpinnerComponent]
+    declarations: [
+        ControlMessagesComponent,
+        SpinnerComponent,
+        ColumnsToArrayPipe,
+        ValuesPipe
+    ]
 })
 export class SharedModule {
     constructor(translate: TranslateService) {

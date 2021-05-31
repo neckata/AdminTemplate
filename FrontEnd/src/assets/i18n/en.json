@@ -34,5 +34,12 @@
     "firstname": "First Name",
     "lastname": "Last Name",
     "registered": "Got an account already? Log in here!"
+  },
+  "tables": {
+    "header1": "Simple Table",
+    "header2": "Table on Plain Background",
+    "desc": "Here is a subtitle for this table",
+    "noData": "No data matching the filter",
+    "filter": "Filter"
   }
 }
