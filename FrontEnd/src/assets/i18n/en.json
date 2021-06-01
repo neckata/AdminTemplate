@@ -47,5 +47,21 @@
     "desc": "Here is a subtitle for this table",
     "noData": "No data matching the filter",
     "filter": "Filter"
+  },
+  "user": {
+    "edit": "Edit Profile",
+    "complete": "Complete your profile",
+    "company": "Company (disabled)",
+    "userName": "UserName",
+    "email": "Email address",
+    "firstName": "Fist Name",
+    "lastName": "Last Name",
+    "adress": "Adress",
+    "city": "City",
+    "country": "Country",
+    "code": "Postal Code",
+    "info": "Info about me",
+    "aboutMe": "About me",
+    "updateProfile": "Update Profile"
   }
 }

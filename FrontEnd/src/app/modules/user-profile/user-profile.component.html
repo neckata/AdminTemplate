@@ -1,98 +1,97 @@
 <div class="main-content">
-  <div class="container-fluid">
-      <div class="row">
-          <div class="col-md-8">
-              <div class="card">
-                  <div class="card-header card-header-danger">
-                      <h4 class="card-title">Edit Profile</h4>
-                      <p class="card-category">Complete your profile</p>
-                  </div>
-                  <div class="card-body">
-                      <form>
-                          <div class="row">
-                              <div class="col-md-5">
-                                <mat-form-field >
-                                    <input matInput placeholder="Company (disabled)" disabled>
-                                  </mat-form-field>
-                              </div>
-                              <div class="col-md-3">
-                                  <mat-form-field >
-                                    <input matInput placeholder="Username">
-                                  </mat-form-field>
-                              </div>
-                              <div class="col-md-4">
-                                  <mat-form-field >
-                                    <input matInput placeholder="Email address" type="email">
-                                  </mat-form-field>
-                              </div>
-                          </div>
-                          <div class="row">
-                              <div class="col-md-6">
-                                <mat-form-field >
-                                  <input matInput placeholder="Fist Name" type="text">
-                                </mat-form-field>
-                              </div>
-                              <div class="col-md-6">
-                                <mat-form-field >
-                                  <input matInput placeholder="Last Name" type="text">
-                                </mat-form-field>
-                              </div>
-                          </div>
-                          <div class="row">
-                              <div class="col-md-12">
-                                <mat-form-field >
-                                  <input matInput placeholder="Adress" type="text">
-                                </mat-form-field>
-                              </div>
-                          </div>
-                          <div class="row">
-                              <div class="col-md-4">
-                                <mat-form-field >
-                                  <input matInput placeholder="City" type="text">
-                                </mat-form-field>
-                              </div>
-                              <div class="col-md-4">
-                                <mat-form-field >
-                                  <input matInput placeholder="Country" type="text">
-                                </mat-form-field>
-                              </div>
-                              <div class="col-md-4">
-                                <mat-form-field >
-                                  <input matInput placeholder="Postal Code" type="text">
-                                </mat-form-field>
-                              </div>
-                          </div>
-                          <div class="row">
-                              <div class="col-md-12">
-                                <label>About Me</label>
-                                <mat-form-field >
-                                   <textarea matInput placeholder="Great Info about me"></textarea>
-                                 </mat-form-field>
-                              </div>
-                          </div>
-                          <button mat-raised-button type="submit" class="btn btn-danger pull-right">Update Profile</button>
-                          <div class="clearfix"></div>
-                      </form>
-                  </div>
-              </div>
-          </div>
-          <div class="col-md-4">
-              <div class="card card-profile">
-                  <div class="card-avatar">
-                      <a href="javascript:void(0)">
-                          <img class="img" src="./assets/img/faces/user.png" />
-                      </a>
-                  </div>
-                  <div class="card-body">
-                      <h6 class="card-category text-gray">Admin</h6>
-                      <h4 class="card-title">Admin</h4>
-                      <p class="card-description">
-                         Some Description
-                      </p>
-                      <a href="javascript:void(0)" class="btn btn-danger btn-round">Follow</a>
-                  </div>
-              </div>
-          </div>
-      </div>
-  </div>
+	<div class="container-fluid">
+		<div class="row">
+			<div class="col-md-8">
+				<div class="card">
+					<div class="card-header card-header-danger">
+						<h4 class="card-title">{{"user.edit" | translate}}</h4>
+						<p class="card-category">{{"user.complete" | translate}}</p>
+					</div>
+					<div class="card-body">
+						<form>
+							<div class="row">
+								<div class="col-md-5">
+									<mat-form-field>
+										<input matInput [placeholder]="'user.complete' | translate" disabled>
+									</mat-form-field>
+								</div>
+								<div class="col-md-3">
+									<mat-form-field>
+										<input matInput [placeholder]="'user.username' | translate">
+									</mat-form-field>
+								</div>
+								<div class="col-md-4">
+									<mat-form-field>
+										<input matInput [placeholder]="'user.email' | translate" type="email">
+									</mat-form-field>
+								</div>
+							</div>
+							<div class="row">
+								<div class="col-md-6">
+									<mat-form-field>
+										<input matInput [placeholder]="'user.firstName' | translate" type="text">
+									</mat-form-field>
+								</div>
+								<div class="col-md-6">
+									<mat-form-field>
+										<input matInput [placeholder]="'user.lastName' | translate" type="text">
+									</mat-form-field>
+								</div>
+							</div>
+							<div class="row">
+								<div class="col-md-12">
+									<mat-form-field>
+										<input matInput [placeholder]="'user.adress' | translate" type="text">
+									</mat-form-field>
+								</div>
+							</div>
+							<div class="row">
+								<div class="col-md-4">
+									<mat-form-field>
+										<input matInput [placeholder]="'user.city' | translate" type="text">
+									</mat-form-field>
+								</div>
+								<div class="col-md-4">
+									<mat-form-field>
+										<input matInput [placeholder]="'user.country' | translate" type="text">
+									</mat-form-field>
+								</div>
+								<div class="col-md-4">
+									<mat-form-field>
+										<input matInput [placeholder]="'user.code' | translate" type="text">
+									</mat-form-field>
+								</div>
+							</div>
+							<div class="row">
+								<div class="col-md-12">
+									<label>{{'user.aboutMe' | translate}}</label>
+									<mat-form-field>
+										<textarea matInput [placeholder]="'user.info' | translate"></textarea>
+									</mat-form-field>
+								</div>
+							</div>
+							<button mat-raised-button type="submit" class="btn btn-danger pull-right">{{'user.updateProfile' | translate}}</button>
+							<div class="clearfix"></div>
+						</form>
+					</div>
+				</div>
+			</div>
+			<div class="col-md-4">
+				<div class="card card-profile">
+					<div class="card-avatar">
+						<a href="javascript:void(0)">
+							<img class="img" src="./assets/img/faces/user.png" />
+						</a>
+					</div>
+					<div class="card-body">
+						<h6 class="card-category text-gray">Role</h6>
+						<h4 class="card-title">Name</h4>
+						<p class="card-description">
+							Description
+						</p>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
 </div>
