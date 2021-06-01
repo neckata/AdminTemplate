@@ -2,6 +2,12 @@
   "navigation": {
     "title": "Template"
   },
+  "errors": {
+    "required": "Field is required.",
+    "invalidPassword": "Invalid password. Password must be at least 6 characters long, and contain a number.",
+    "maxlength": "The field can't contain more than {{requiredLength}} characters.",
+    "minlength": "The field must contain atleast {{requiredLength}} characters."
+  },
   "navBar": {
     "organisation": "Organisation",
     "aboutUs": "About us",

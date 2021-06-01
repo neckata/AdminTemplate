@@ -11,7 +11,7 @@ export class ControlMessagesComponent {
     @Input() control: FormControl;
     @Input() labelName?: string;
 
-    get errorMessage(): boolean {
+    get errorMessage(): string {
         for (const propertyName in this.control.errors) {
             if (
                 this.control.errors.hasOwnProperty(propertyName) &&

@@ -1,16 +1,22 @@
 import { Injectable } from '@angular/core';
 import { AbstractControl } from '@angular/forms';
+import { TranslateService } from '@ngx-translate/core';
 
 @Injectable({
     providedIn: 'root'
 })
 export class ValidationService {
-    public static getValidationErrorMessage(validatorName: string, validatorValue?: any, labelName?: string): any {
+    public static translateService: TranslateService;
+    constructor(public translate: TranslateService) {
+        ValidationService.translateService = translate;
+    }
+
+    public static getValidationErrorMessage(validatorName: string, validatorValue?: any, labelName?: string): string {
         const config = {
-            required: `Field is required.`,
-            invalidPassword: 'Invalid password. Password must be at least 6 characters long, and contain a number.',
-            maxlength: `The field can't contain more than ${validatorValue.requiredLength} characters.`,
-            minlength: `The field must contain atleast ${validatorValue.requiredLength} characters.`
+            required: this.translateService.instant("errors.required"),
+            invalidPassword: this.translateService.instant("errors.invalidPassword"),
+            maxlength: this.translateService.instant("errors.maxlength", { requiredLength: validatorValue.requiredLength}),
+            minlength: this.translateService.instant("errors.minlength", { requiredLength: validatorValue.requiredLength })
         };
 
         return config[validatorName];
