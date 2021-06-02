@@ -8,69 +8,49 @@
 						<p class="card-category">{{"user.complete" | translate}}</p>
 					</div>
 					<div class="card-body">
-						<form>
+						<form [formGroup]="profileForm" (ngSubmit)="onSubmit()">
 							<div class="row">
 								<div class="col-md-5">
-									<mat-form-field>
-										<input matInput [placeholder]="'user.complete' | translate" disabled>
-									</mat-form-field>
+									<form-control name="complete" [group]="profileForm" [formType]="formTypes.Text" placeholder="user.complete" isDisabled="true"></form-control>
 								</div>
 								<div class="col-md-3">
-									<mat-form-field>
-										<input matInput [placeholder]="'user.username' | translate">
-									</mat-form-field>
+									<form-control name="username" [group]="profileForm" [formType]="formTypes.Text" placeholder="user.userName"></form-control>
 								</div>
 								<div class="col-md-4">
-									<mat-form-field>
-										<input matInput [placeholder]="'user.email' | translate" type="email">
-									</mat-form-field>
+									<form-control name="email" [group]="profileForm" [formType]="formTypes.Text" placeholder="user.email"></form-control>
 								</div>
 							</div>
 							<div class="row">
 								<div class="col-md-6">
-									<mat-form-field>
-										<input matInput [placeholder]="'user.firstName' | translate" type="text">
-									</mat-form-field>
+									<form-control name="firstName" [group]="profileForm" [formType]="formTypes.Text" placeholder="user.firstName"></form-control>
 								</div>
 								<div class="col-md-6">
-									<mat-form-field>
-										<input matInput [placeholder]="'user.lastName' | translate" type="text">
-									</mat-form-field>
+									<form-control name="lastName" [group]="profileForm" [formType]="formTypes.Text" placeholder="user.lastName"></form-control>
 								</div>
 							</div>
 							<div class="row">
 								<div class="col-md-12">
-									<mat-form-field>
-										<input matInput [placeholder]="'user.adress' | translate" type="text">
-									</mat-form-field>
+									<form-control name="adress" [group]="profileForm" [formType]="formTypes.Text" placeholder="user.adress"></form-control>
 								</div>
 							</div>
 							<div class="row">
 								<div class="col-md-4">
-									<mat-form-field>
-										<input matInput [placeholder]="'user.city' | translate" type="text">
-									</mat-form-field>
+									<form-control name="city" [group]="profileForm" [formType]="formTypes.Text" placeholder="user.city"></form-control>
 								</div>
 								<div class="col-md-4">
-									<mat-form-field>
-										<input matInput [placeholder]="'user.country' | translate" type="text">
-									</mat-form-field>
+									<form-control name="country" [group]="profileForm" [formType]="formTypes.Text" placeholder="user.country"></form-control>
 								</div>
 								<div class="col-md-4">
-									<mat-form-field>
-										<input matInput [placeholder]="'user.code' | translate" type="text">
-									</mat-form-field>
+									<form-control name="code" [group]="profileForm" [formType]="formTypes.Text" placeholder="user.code"></form-control>
 								</div>
 							</div>
 							<div class="row">
 								<div class="col-md-12">
 									<label>{{'user.aboutMe' | translate}}</label>
-									<mat-form-field>
-										<textarea matInput [placeholder]="'user.info' | translate"></textarea>
-									</mat-form-field>
+									<form-control name="info" [group]="profileForm" [formType]="formTypes.TextArea" placeholder="user.info"></form-control>
 								</div>
 							</div>
-							<button mat-raised-button type="submit" class="btn btn-danger pull-right">{{'user.updateProfile' | translate}}</button>
+							<button mat-raised-button type="submit" class="btn btn-danger pull-right" [disabled]="!profileForm.valid">{{'user.updateProfile' | translate}}</button>
 							<div class="clearfix"></div>
 						</form>
 					</div>

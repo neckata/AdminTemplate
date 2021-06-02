@@ -8,10 +8,11 @@ import { RouterModule } from '@angular/router';
 
 import { MaterialModule } from './material.module';
 
-import { ControlMessagesComponent } from './components/control-messages/control-messages.component';
 import { SpinnerComponent } from './components/spinner/spinner.component';
 import { ColumnsToArrayPipe } from './pipes/columns-to-array.pipe';
 import { ValuesPipe } from './pipes/values.pipe';
+import { ValidationErrorsComponent } from './components/validation-errors/validation-errors.component';
+import { FormControlComponent } from './components/form-control/form-control.component';
 
 @NgModule({
     imports: [
@@ -34,14 +35,19 @@ import { ValuesPipe } from './pipes/values.pipe';
         RouterModule,
         MaterialModule,
         ReactiveFormsModule,
+
         ColumnsToArrayPipe,
         ValuesPipe,
-        ControlMessagesComponent,
-        SpinnerComponent
+
+        SpinnerComponent,
+        ValidationErrorsComponent,
+        FormControlComponent
     ],
     declarations: [
-        ControlMessagesComponent,
         SpinnerComponent,
+        ValidationErrorsComponent,
+        FormControlComponent,
+
         ColumnsToArrayPipe,
         ValuesPipe
     ]

@@ -1,0 +1,15 @@
+<div [formGroup]="group">
+	<mat-form-field *ngIf="formType == formTypes.Text">
+		<input matInput [placeholder]="placeholder | translate" type="text" [formControlName]="name">
+		<mat-error *ngIf="hasErrors()">
+			<validation-errors [errors]="getErrors()"></validation-errors>
+		</mat-error>
+	</mat-form-field>
+
+	<mat-form-field *ngIf="formType == formTypes.TextArea">
+		<textarea matInput [placeholder]="placeholder | translate" [formControlName]="name"></textarea>
+		<mat-error *ngIf="hasErrors()">
+			<validation-errors [errors]="getErrors()"></validation-errors>
+		</mat-error>
+	</mat-form-field>
+</div>
