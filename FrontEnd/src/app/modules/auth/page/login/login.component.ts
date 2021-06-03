@@ -4,6 +4,7 @@ import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { tap, delay, finalize, catchError } from 'rxjs/operators';
 import { of, Subscription } from 'rxjs';
 import { AuthService } from '../../../../core/services/auth.service';
+import { FormType } from '../../../../shared/enums/form-types.enum';
 
 @Component({
     selector: 'app-login',
@@ -14,6 +15,7 @@ export class LoginComponent implements OnDestroy {
     error: string;
     isLoading: boolean;
     loginForm: FormGroup;
+    formTypes = FormType;
 
     private sub = new Subscription();
 
@@ -21,11 +23,7 @@ export class LoginComponent implements OnDestroy {
         this.buildForm();
     }
 
-    get f() {
-        return this.loginForm.controls;
-    }
-
-    login() {
+    public login(): void {
         this.isLoading = true;
 
         const credentials = this.loginForm.value;
@@ -43,7 +41,7 @@ export class LoginComponent implements OnDestroy {
 
     private buildForm(): void {
         this.loginForm = this.formBuilder.group({
-            username: ['', Validators.required],
+            userName: ['', Validators.required],
             password: ['', Validators.required]
         });
     }

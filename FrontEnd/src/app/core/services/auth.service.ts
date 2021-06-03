@@ -1,32 +1,29 @@
 import { Injectable } from '@angular/core';
-import { of, Observable, throwError } from 'rxjs';
+import { of, throwError, Observable} from 'rxjs';
+import 'rxjs/add/operator/map';
 
 import { LoginContextInterface, User } from '../../data/schema/user';
-
-const defaultUser = {
-    username: 'admin',
-    password: 'admin',
-    token: '12345'
-};
+import { UserService } from '../../data/service/user.service';
 
 @Injectable({
     providedIn: 'root'
 })
 export class AuthService {
-    token: string;
     currentUser: User;
 
-    login(loginContext: LoginContextInterface): Observable<User> {
-        const isDefaultUser =
-            loginContext.username === defaultUser.username &&
-            loginContext.password === defaultUser.password;
+    constructor(public userService: UserService) {
+    }
 
-        if (isDefaultUser) {
-            this.token = defaultUser.token;
-            return of(defaultUser);
-        }
+    login(loginContext: LoginContextInterface): Observable<any> {
+        return this.userService.login(loginContext.userName, loginContext.password)
+            .map(user => {
+                if (user != null) {
+                    this.currentUser = user;
+                    return user;
+                }
 
-        return throwError('Invalid username or password');
+                return throwError('Invalid username or password');
+            });
     }
 
     logout(): Observable<boolean> {
@@ -34,6 +31,6 @@ export class AuthService {
     }
 
     isUserIn() {
-        return this.token != null && this.token != "";
+        return this.currentUser.token != null && this.currentUser.token != "";
     }
 }

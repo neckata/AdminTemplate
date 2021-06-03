@@ -2,14 +2,21 @@
 	<mat-form-field *ngIf="formType == formTypes.Text">
 		<input matInput [placeholder]="placeholder | translate" type="text" [formControlName]="name">
 		<mat-error *ngIf="hasErrors()">
-			<validation-errors [errors]="getErrors()"></validation-errors>
+			<validation-errors [control]="control" [labelName]="placeholder | translate"></validation-errors>
+		</mat-error>
+	</mat-form-field>
+
+	<mat-form-field *ngIf="formType == formTypes.Password">
+		<input matInput [placeholder]="placeholder | translate" type="password" [formControlName]="name">
+		<mat-error *ngIf="hasErrors()">
+			<validation-errors [control]="control" [labelName]="placeholder | translate"></validation-errors>
 		</mat-error>
 	</mat-form-field>
 
 	<mat-form-field *ngIf="formType == formTypes.TextArea">
 		<textarea matInput [placeholder]="placeholder | translate" [formControlName]="name"></textarea>
 		<mat-error *ngIf="hasErrors()">
-			<validation-errors [errors]="getErrors()"></validation-errors>
+			<validation-errors [control]="control" [labelName]="placeholder | translate"></validation-errors>
 		</mat-error>
 	</mat-form-field>
 </div>

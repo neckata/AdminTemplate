@@ -35,5 +35,20 @@
       "city": "Feldkirchen in Kärnten",
       "salary": "$46,738"
     }
+  ],
+  "usersFullInfo": [
+    {
+      "id": 1,
+      "userName": "admin",
+      "email": "email@gmail.com",
+      "firstName": "Admin",
+      "lastName": "Admin",
+      "adress": "USA, New York, st. Main Street 5",
+      "city": "New York",
+      "country": "USA",
+      "code": "1234",
+      "info": "Very intresting info about myself",
+      "role": "0"
+    }
   ]
 }

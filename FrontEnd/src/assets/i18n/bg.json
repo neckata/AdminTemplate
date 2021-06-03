@@ -3,10 +3,10 @@
     "title": "Template"
   },
   "errors": {
-    "required": "Field is required.",
+    "required": "{{field}} is required.",
     "invalidPassword": "Invalid password. Password must be at least 6 characters long, and contain a number.",
-    "maxlength": "The field can't contain more than {{requiredLength}} characters.",
-    "minlength": "The field must contain atleast {{requiredLength}} characters."
+    "maxlength": "{{field}} can't contain more than {{requiredLength}} characters.",
+    "minlength": "{{field}} must contain atleast {{requiredLength}} characters."
   },
   "navBar": {
     "organisation": "Organisation",
@@ -33,13 +33,14 @@
     "images": "Images"
   },
   "auth": {
-    "username": "Username",
+    "userName": "Username",
     "password": "Password",
     "noAccount": "Don't have an account? Sign up here!",
     "submit": "Submit",
-    "firstname": "First Name",
-    "lastname": "Last Name",
-    "registered": "Got an account already? Log in here!"
+    "firstName": "First Name",
+    "lastName": "Last Name",
+    "registered": "Got an account already? Log in here!",
+    "signUp": "Sing Up"
   },
   "tables": {
     "header1": "Simple Table",

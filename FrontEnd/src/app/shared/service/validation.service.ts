@@ -6,23 +6,23 @@ import { TranslateService } from '@ngx-translate/core';
     providedIn: 'root'
 })
 export class ValidationService {
-    public static translateService: TranslateService;
+    public  translateService: TranslateService;
     constructor(public translate: TranslateService) {
-        ValidationService.translateService = translate;
+        this.translateService = translate;
     }
 
-    public static getValidationErrorMessage(validatorName: string, validatorValue?: any, labelName?: string): string {
+    public  getValidationErrorMessage(validatorName: string, validatorValue?: any, labelName?: string): string {
         const config = {
-            required: this.translateService.instant("errors.required"),
+            required: this.translateService.instant("errors.required", { field: labelName }),
             invalidPassword: this.translateService.instant("errors.invalidPassword"),
-            maxlength: this.translateService.instant("errors.maxlength", { requiredLength: validatorValue.requiredLength}),
-            minlength: this.translateService.instant("errors.minlength", { requiredLength: validatorValue.requiredLength })
+            maxlength: this.translateService.instant("errors.maxlength", { requiredLength: validatorValue.requiredLength, field: labelName}),
+            minlength: this.translateService.instant("errors.minlength", { requiredLength: validatorValue.requiredLength, field: labelName })
         };
 
         return config[validatorName];
     }
 
-    public static passwordValidator(control: AbstractControl): any {
+    public  passwordValidator(control: AbstractControl): any {
         if (!control.value) { return; }
 
         // {6,100}           - Assert password is between 6 and 100 characters

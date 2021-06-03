@@ -1,5 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { FormGroup, ValidationErrors } from '@angular/forms';
+import { AbstractControl, FormGroup, ValidationErrors } from '@angular/forms';
 import { FormType } from '../../enums/form-types.enum';
 
 @Component({
@@ -8,16 +8,17 @@ import { FormType } from '../../enums/form-types.enum';
     styleUrls: ['./form-control.component.css']
 })
 export class FormControlComponent implements OnInit {
-
     @Input() group: FormGroup;
     @Input() name: string;
     @Input() formType: FormType;
     @Input() placeholder: string;
     @Input() isDisabled: boolean;
 
+    control: AbstractControl;
     formTypes = FormType;
 
     ngOnInit(): void {
+        this.control = this.group.controls[this.name];
         if (this.isDisabled)
             this.group.get(this.name).disable();
     }
