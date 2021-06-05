@@ -64,5 +64,46 @@
     "info": "Info about me",
     "aboutMe": "About me",
     "updateProfile": "Update Profile"
+  },
+  "dashboard": {
+    "chart1": {
+      "title": "Daily Sales",
+      "description": "increase in today sales.",
+      "footer": "updated 4 minutes ago"
+    },
+    "chart2": {
+      "title": "Email Subscriptions",
+      "description": "Last Campaign Performance",
+      "footer": "campaign sent 2 days ago"
+    },
+    "chart3": {
+      "title": "Completed Tasks",
+      "description": "Last Campaign Performance",
+      "footer": "campaign sent 2 days ago"
+    },
+    "stats1": {
+      "title": "49/50 GB",
+      "category": "Used Space",
+      "footer": "Get More Space..."
+    },
+    "stats2": {
+      "title": "$34,245",
+      "category": "Revenue",
+      "footer": "Last 24 Hours"
+    },
+    "stats3": {
+      "title": "75",
+      "category": "Fixed Issues",
+      "footer": "Tracked from Github"
+    },
+    "stats4": {
+      "title": "+245",
+      "category": "Followers",
+      "footer": "Just Updated"
+    },
+    "table1": {
+      "title": "Employees Stats",
+      "category": "New employees on 15th September, 2016"
+    }
   }
 }

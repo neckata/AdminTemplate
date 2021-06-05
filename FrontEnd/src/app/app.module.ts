@@ -20,6 +20,10 @@ import { TableListComponent } from './modules/table-list/table-list.component';
 import { TypographyComponent } from './modules/typography/typography.component';
 import { MapsComponent } from './modules/maps/maps.component';
 import { NotificationsComponent } from './modules/notifications/notifications.component';
+import { CardStatsComponent } from './modules/dashboard/card-stats/card-stats.component';
+import { CardChartComponent } from './modules/dashboard/card-chart/card-chart.component';
+import { CardListComponent } from './modules/dashboard/card-list/card-list.component';
+import { CardTableComponent } from './modules/dashboard/card-table/card-table.component';
 
 @NgModule({
     imports: [
@@ -55,6 +59,10 @@ import { NotificationsComponent } from './modules/notifications/notifications.co
         TypographyComponent,
         MapsComponent,
         NotificationsComponent,
+        CardStatsComponent,
+        CardChartComponent,
+        CardListComponent,
+        CardTableComponent,
 
     ],
     providers: [],

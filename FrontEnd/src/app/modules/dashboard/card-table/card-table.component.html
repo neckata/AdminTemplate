@@ -1,0 +1,22 @@
+<div class="card">
+	<div class="card-header" [class]="data.headerClassColor">
+		<h4 class="card-title">{{data.title | translate}}</h4>
+		<p class="card-category">{{data.description | translate}}</p>
+	</div>
+	<div class="card-body table-responsive">
+		<table class="table table-hover">
+			<thead class="text-primary">
+			<th *ngFor="let colum of data.displayColumns">
+				{{colum.name}}
+			</th>
+			</thead>
+			<tbody>
+				<tr *ngFor="let value of data.data">
+					<td *ngFor="let item of value | values">
+						{{item}}
+					</td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+</div>

@@ -1,0 +1,17 @@
+<div class="card card-chart">
+	<div class="card-header" [class]="data.headerClassColor">
+		<div class="ct-chart" [id]="data.chartId"></div>
+	</div>
+	<div class="card-body">
+		<h4 class="card-title">{{data.title | translate}}</h4>
+		<p class="card-category">
+			<span class="text-success"><i class="fa" [class]="data.descriptionIcon"></i> {{data.descriptionSecond}} </span>
+			{{data.description | translate}}
+		</p>
+	</div>
+	<div class="card-footer">
+		<div class="stats">
+			<i class="material-icons">{{data.footerIcon}}</i> {{data.footer | translate}}
+		</div>
+	</div>
+</div>

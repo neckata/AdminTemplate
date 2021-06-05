@@ -1,20 +1,12 @@
 <div [formGroup]="group">
-	<mat-form-field *ngIf="formType == formTypes.Text">
-		<input matInput [placeholder]="placeholder | translate" type="text" [formControlName]="name">
-		<mat-error *ngIf="hasErrors()">
-			<validation-errors [control]="control" [labelName]="placeholder | translate"></validation-errors>
-		</mat-error>
-	</mat-form-field>
+	<mat-form-field>
 
-	<mat-form-field *ngIf="formType == formTypes.Password">
-		<input matInput [placeholder]="placeholder | translate" type="password" [formControlName]="name">
-		<mat-error *ngIf="hasErrors()">
-			<validation-errors [control]="control" [labelName]="placeholder | translate"></validation-errors>
-		</mat-error>
-	</mat-form-field>
+		<input *ngIf="formType == formTypes.Text" matInput [placeholder]="placeholder | translate" [formControlName]="name" type="text">
 
-	<mat-form-field *ngIf="formType == formTypes.TextArea">
-		<textarea matInput [placeholder]="placeholder | translate" [formControlName]="name"></textarea>
+		<input *ngIf="formType == formTypes.Password" matInput [placeholder]="placeholder | translate" [formControlName]="name" type="password">
+
+		<textarea *ngIf="formType == formTypes.TextArea" matInput [placeholder]="placeholder | translate" [formControlName]="name"></textarea>
+
 		<mat-error *ngIf="hasErrors()">
 			<validation-errors [control]="control" [labelName]="placeholder | translate"></validation-errors>
 		</mat-error>
