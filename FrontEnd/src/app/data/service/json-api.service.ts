@@ -35,6 +35,12 @@ export class JsonApiService {
 
                     return null;
                 }
+            case '/dashboard/bugs':
+                return of(data.dashboard.list.bugs);
+            case '/dashboard/website':
+                return of(data.dashboard.list.website);
+            case '/dashboard/server':
+                return of(data.dashboard.list.server);
             default:
                 const id = url.substring(url.lastIndexOf('/') + 1);
                 return of(data.users[id]);

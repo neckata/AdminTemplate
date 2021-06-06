@@ -11,8 +11,8 @@
 			</div>
 		</div>
 		<div class="row">
-			<div class="col-lg-6 col-md-12">
-				<card-list></card-list>
+			<div class="col-lg-6 col-md-12" *ngFor="let list of lists">
+				<card-list [data]="list"></card-list>
 			</div>
 			<div class="col-lg-6 col-md-12" *ngFor="let table of tables">
 				<card-table [data]="table"></card-table>

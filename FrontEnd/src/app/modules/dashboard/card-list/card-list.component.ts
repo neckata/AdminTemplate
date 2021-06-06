@@ -1,15 +1,20 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input } from '@angular/core';
+import { CardList } from '../../../data/schema/dashboard/card-list.model';
 
 @Component({
-  selector: 'card-list',
-  templateUrl: './card-list.component.html',
-  styleUrls: ['./card-list.component.css']
+    selector: 'card-list',
+    templateUrl: './card-list.component.html',
+    styleUrls: ['./card-list.component.css']
 })
-export class CardListComponent implements OnInit {
+export class CardListComponent {
 
-  constructor() { }
+    @Input() data: CardList;
 
-  ngOnInit(): void {
-  }
+    public edit(id: number): void {
 
+    }
+
+    public delete(id: number): void {
+
+    }
 }

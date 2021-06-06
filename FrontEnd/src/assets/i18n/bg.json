@@ -15,7 +15,9 @@
     "toggle": "Toggle navigation"
   },
   "helper": {
-    "loading": "Loading"
+    "loading": "Loading",
+    "edit": "Edit",
+    "delete": "Delete"
   },
   "sidebar": {
     "stats": "Stats",
@@ -65,6 +67,7 @@
     "aboutMe": "About me",
     "updateProfile": "Update Profile"
   },
+
   "dashboard": {
     "chart1": {
       "title": "Daily Sales",
@@ -104,6 +107,18 @@
     "table1": {
       "title": "Employees Stats",
       "category": "New employees on 15th September, 2016"
+    },
+    "list1": {
+      "header": "Tasks",
+      "tab1": {
+        "header": "Bugs"
+      },
+      "tab2": {
+        "header": "Website"
+      },
+      "tab3": {
+        "header": "Server"
+      }
     }
   }
 }
