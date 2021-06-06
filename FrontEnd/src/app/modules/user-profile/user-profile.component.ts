@@ -4,6 +4,7 @@ import { Validators } from '@angular/forms';
 import { AuthService } from '../../core/services/auth.service';
 import { UserService } from '../../data/service/user.service';
 import { FormType } from '../../shared/enums/form-types.enum';
+import { Role } from '../../shared/enums/role.enums';
 
 @Component({
     selector: 'app-user-profile',
@@ -12,7 +13,7 @@ import { FormType } from '../../shared/enums/form-types.enum';
 })
 export class UserProfileComponent implements OnInit {
     profileForm = new FormGroup({
-        complete: new FormControl(''),
+        role: new FormControl(''),
         userName: new FormControl('', [Validators.required, Validators.minLength(3), Validators.maxLength(30)]),
         email: new FormControl('', [Validators.required, Validators.minLength(3), Validators.maxLength(30)]),
         firstName: new FormControl('', [Validators.required, Validators.minLength(3), Validators.maxLength(30)]),
@@ -25,6 +26,7 @@ export class UserProfileComponent implements OnInit {
     });
 
     formTypes = FormType;
+    roleTypes = Role;
 
     constructor(public userService: UserService, public authService: AuthService) {
     }
@@ -32,6 +34,7 @@ export class UserProfileComponent implements OnInit {
     ngOnInit(): void {
         this.userService.getUser(this.authService.currentUser.id).subscribe(user => {
             this.profileForm.patchValue({
+                role: this.roleTypes[user.role],
                 userName: user.userName,
                 email: user.email,
                 firstName: user.firstName,
@@ -46,6 +49,6 @@ export class UserProfileComponent implements OnInit {
     }
 
     onSubmit(): void {
-        
+
     }
 }
