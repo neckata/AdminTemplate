@@ -20,6 +20,7 @@ import { FormControlComponent } from './components/form-control/form-control.com
         FormsModule,
         RouterModule,
         ReactiveFormsModule,
+        MaterialModule,
         TranslateModule.forRoot({
             loader: {
                 provide: TranslateLoader,
