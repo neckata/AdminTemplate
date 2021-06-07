@@ -31,6 +31,6 @@ export class AuthService {
     }
 
     isUserIn() {
-        return this.currentUser.token != null && this.currentUser.token != "";
+        return this.currentUser != null &&  this.currentUser.token != null && this.currentUser.token != "";
     }
 }

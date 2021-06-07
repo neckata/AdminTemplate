@@ -9,6 +9,7 @@ import { TypographyComponent } from './modules/typography/typography.component';
 import { AdminLayoutComponent } from './layout/admin-layout/admin-layout.component';
 import { NotificationsComponent } from './modules/notifications/notifications.component';
 import { AuthLayoutComponent } from './layout/auth-layout/auth-layout.component';
+import { CalendarComponent } from './modules/calendar/calendar.component';
 
 const routes: Routes = [
     {
@@ -26,6 +27,7 @@ const routes: Routes = [
             { path: 'table-list', component: TableListComponent },
             { path: 'typography', component: TypographyComponent },
             { path: 'maps', component: MapsComponent },
+            { path: 'calendar', component: CalendarComponent },
             { path: 'notifications', component: NotificationsComponent }
         ]
     },

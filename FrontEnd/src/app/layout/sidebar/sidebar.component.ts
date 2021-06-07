@@ -8,6 +8,7 @@ export const ROUTES: RouteInfo[] = [
     { path: '/user-profile', title: 'User Profile',  icon:'person', class: '' },
     { path: '/table-list', title: 'Table List', icon: 'content_paste', class: '' },
     { path: '/maps', title: 'Maps', icon: 'location_on', class: '' },
+    { path: '/calendar', title: 'Calendar', icon: 'calendar_today', class: '' },
     { path: '/typography', title: 'Typography',  icon:'library_books', class: '' },
     { path: '/notifications', title: 'Notifications',  icon:'notifications', class: '' }
 ];
