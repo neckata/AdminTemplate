@@ -15,6 +15,7 @@ export class UserService {
     }
 
     public getUsers(): Observable<UserInfo[]> {
+        //return this._http.get<Product[]>({ url: 'https://example-api/products', cacheMins: 5 })
         return this.jsonApiService.get("/users");
     }
 

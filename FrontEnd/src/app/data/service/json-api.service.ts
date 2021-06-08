@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import { Observable, of } from 'rxjs';
+import { CacheService } from '../../core/services/cache.service';
 import { User } from '../schema/user';
 import data from '../service/json/data.json';
 
@@ -7,6 +8,9 @@ import data from '../service/json/data.json';
     providedIn: 'root'
 })
 export class JsonApiService {
+    constructor(private cacheService: CacheService) {
+    }
+
     get(url: string, ...params: any): Observable<any> {
         switch (url) {
             case '/users':
@@ -29,6 +33,12 @@ export class JsonApiService {
                         user.userName = defaultUser.username;
                         user.token = defaultUser.token;
                         user.role = defaultUser.role;
+
+                        this.cacheService.save({
+                            key: "user",
+                            data: user,
+                            expirationMins: 60
+                        });
 
                         return of(user);
                     }

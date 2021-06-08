@@ -4,6 +4,7 @@ import 'rxjs/add/operator/map';
 
 import { LoginContextInterface, User } from '../../data/schema/user';
 import { UserService } from '../../data/service/user.service';
+import { CacheService } from './cache.service';
 
 @Injectable({
     providedIn: 'root'
@@ -11,7 +12,8 @@ import { UserService } from '../../data/service/user.service';
 export class AuthService {
     currentUser: User;
 
-    constructor(public userService: UserService) {
+    constructor(public userService: UserService, private cacheService: CacheService) {
+        this.currentUser = this.cacheService.load("user");
     }
 
     login(loginContext: LoginContextInterface): Observable<any> {
@@ -31,6 +33,6 @@ export class AuthService {
     }
 
     isUserIn() {
-        return this.currentUser != null &&  this.currentUser.token != null && this.currentUser.token != "";
+        return this.currentUser != null;
     }
 }
