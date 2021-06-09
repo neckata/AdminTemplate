@@ -145,7 +145,7 @@ export class DashboardComponent implements AfterViewInit {
         const dataCompletedTasksChart: any = {
             labels: ['12p', '3p', '6p', '9p', '12p', '3a', '6a', '9a'],
             series: [
-                emailSubscriptionsData
+                completedTasks
             ]
         };
 
@@ -170,8 +170,7 @@ export class DashboardComponent implements AfterViewInit {
         var datawebsiteViewsChart = {
             labels: ['J', 'F', 'M', 'A', 'M', 'J', 'J', 'A', 'S', 'O', 'N', 'D'],
             series: [
-                completedTasks
-
+                emailSubscriptionsData
             ]
         };
 

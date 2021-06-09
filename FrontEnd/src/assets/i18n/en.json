@@ -67,7 +67,9 @@
     "aboutMe": "About me",
     "updateProfile": "Update Profile"
   },
-
+  "calendar": {
+    "title": "Google Default Calendar"
+  },
   "dashboard": {
     "chart1": {
       "title": "Daily Sales",

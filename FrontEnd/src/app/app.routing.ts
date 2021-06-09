@@ -14,11 +14,6 @@ import { CalendarComponent } from './modules/calendar/calendar.component';
 const routes: Routes = [
     {
         path: '',
-        redirectTo: '/auth/login',
-        pathMatch: 'full'
-    },
-    {
-        path: '',
         component: AdminLayoutComponent,
         canActivate: [AuthGuard],
         children: [
@@ -34,10 +29,14 @@ const routes: Routes = [
     {
         path: 'auth',
         component: AuthLayoutComponent,
-        loadChildren: () => import('./modules/auth/auth.module').then(m => m.AuthModule)
+        loadChildren: () => import('./layout/auth/auth.module').then(m => m.AuthModule)
     },
     // Fallback when no prior routes is matched
-    { path: '**', redirectTo: '/auth/login', pathMatch: 'full' }
+    {
+        path: '**',
+        redirectTo: 'auth',
+        pathMatch: 'full'
+    }
 ];
 
 @NgModule({
