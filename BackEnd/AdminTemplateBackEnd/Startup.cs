@@ -49,6 +49,8 @@ namespace AdminTemplate
         {
             ContainerSetup.Setup(services, Configuration);
 
+            services.AddCors();
+
             services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme).AddJwtBearer(JwtBearerDefaults.AuthenticationScheme, (o) =>
             {
                 o.TokenValidationParameters = new TokenValidationParameters()
@@ -96,6 +98,8 @@ namespace AdminTemplate
             app.UseStaticFiles();
 
             app.UseAuthentication();
+
+            app.UseCors(builder => builder.AllowAnyHeader().AllowAnyMethod().AllowAnyOrigin());
 
             if (env.IsDevelopment())
             {

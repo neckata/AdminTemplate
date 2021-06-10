@@ -1,13 +1,14 @@
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
-import { User, UserFullInfo, UserInfo } from '../schema/user';
+import { HttpClientService } from '../../core/services/http-client.service';
+import { RegisterUser, User, UserFullInfo, UserInfo } from '../schema/user';
 import { JsonApiService } from './json-api.service';
 
 @Injectable({
     providedIn: 'root'
 })
 export class UserService {
-    constructor(private jsonApiService: JsonApiService) {
+    constructor(private jsonApiService: JsonApiService, private http: HttpClientService) {
     }
 
     public login(userName: string, password: string): Observable<User> {
@@ -15,11 +16,15 @@ export class UserService {
     }
 
     public getUsers(): Observable<UserInfo[]> {
-        //return this._http.get<Product[]>({ url: 'https://example-api/products', cacheMins: 5 })
+
         return this.jsonApiService.get("/users");
     }
 
     public getUser(userId: number): Observable<UserFullInfo> {
         return this.jsonApiService.get("/users/id", userId);
+    }
+
+    public register(user: RegisterUser) {
+        return this.http.post<RegisterUser[]>({ url: 'Login/Register', body: user, snackBarMessage: "SuccessRegister"})
     }
 }

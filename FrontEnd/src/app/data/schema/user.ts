@@ -21,6 +21,13 @@ export class UserInfo {
     salary: string;
 }
 
+export class RegisterUser {
+    userName: string;
+    password: string;
+    firstName: string;
+    lastName: string;
+}
+
 export class UserFullInfo {
     id: number;
     role: Role;
