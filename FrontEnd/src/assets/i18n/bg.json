@@ -3,8 +3,9 @@
     "title": "Template"
   },
   "messages": {
-    "SuccessRegister": "User registers successfully!"
-  }
+    "SuccessRegister": "User registers successfully!",
+    "wrongLogin": "Invalid username or password"
+  },
   "errors": {
     "required": "{{field}} is required.",
     "invalidPassword": "Invalid password. Password must be at least 6 characters long, and contain a number.",

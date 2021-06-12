@@ -97,8 +97,8 @@ export class HttpClientService {
         var transaltedAction = action != null ? this._translateService.instant("messages." + action) : "OK";
 
         this._snackBar.open(translatedMessage, transaltedAction, {
-            duration: 5000,
-            panelClass: ['alert']
+            duration: isError ? 10000 : 5000,
+            panelClass: isError ? ['alert-danger'] : ['alert-success']
         });
     }
 }

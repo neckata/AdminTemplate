@@ -1,8 +1,8 @@
 import { Injectable } from '@angular/core';
-import { of, throwError, Observable} from 'rxjs';
+import { of, throwError, Observable } from 'rxjs';
 import 'rxjs/add/operator/map';
 
-import { LoginContextInterface, User } from '../../data/schema/user';
+import { LoggedUser, LoginUser } from '../../data/schema/user';
 import { UserService } from '../../data/service/user.service';
 import { CacheService } from './cache.service';
 
@@ -10,21 +10,25 @@ import { CacheService } from './cache.service';
     providedIn: 'root'
 })
 export class AuthService {
-    currentUser: User;
+    currentUser: LoggedUser;
 
     constructor(public userService: UserService, private cacheService: CacheService) {
         this.currentUser = this.cacheService.load("user");
     }
 
-    login(loginContext: LoginContextInterface): Observable<any> {
+    login(loginContext: LoginUser): Observable<any> {
         return this.userService.login(loginContext.userName, loginContext.password)
             .map(user => {
-                if (user != null) {
+                if (user != null || user.token != null) {
+                    this.cacheService.save({
+                        key: "user",
+                        data: user,
+                        expirationMins: 60
+                    });
+
                     this.currentUser = user;
                     return user;
                 }
-
-                return throwError('Invalid username or password');
             });
     }
 

@@ -34,8 +34,8 @@ namespace AdminTemplate.Api.IntegrationTests.Users
             });
 
             //Should be able to login
-            var loginedUser = await new Login.PostShould(_server).Autheticate(newUser.Username, newPassword);
-            loginedUser.User.Username.Should().Be(newUser.Username);
+            var loginedUser = await new Login.PostShould(_server).Autheticate(newUser.UserName, newPassword);
+            loginedUser.User.UserName.Should().Be(newUser.UserName);
         }
     }
 }

@@ -34,7 +34,7 @@ namespace AdminTemplate.Queries.Queries
         public UserWithToken Authenticate(string username, string password)
         {
             var user = (from u in _uow.Query<User>()
-                        where u.Username == username && !u.IsDeleted
+                        where u.UserName == username && !u.IsDeleted
                         select u)
                 .Include(x => x.Roles)
                 .ThenInclude(x => x.Role)
@@ -51,7 +51,7 @@ namespace AdminTemplate.Queries.Queries
             }
 
             var expiresIn = DateTime.Now + TokenAuthOption.ExpiresSpan;
-            var token = _tokenBuilder.Build(user.Username, user.Roles.Select(x => x.Role.Name).ToArray(), expiresIn);
+            var token = _tokenBuilder.Build(user.UserName, user.Roles.Select(x => x.Role.Name).ToArray(), expiresIn);
 
             return new UserWithToken
             {

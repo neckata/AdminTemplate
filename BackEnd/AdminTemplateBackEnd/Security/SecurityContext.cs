@@ -33,7 +33,7 @@ namespace AdminTemplate.Security
 
                 var username = _contextAccessor.HttpContext.User.Identity.Name;
                 _user = _uow.Query<User>()
-                    .Where(x => x.Username == username)
+                    .Where(x => x.UserName == username)
                     .Include(x => x.Roles)
                     .ThenInclude(x => x.Role)
                     .FirstOrDefault();

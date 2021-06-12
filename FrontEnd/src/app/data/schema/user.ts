@@ -1,16 +1,28 @@
 import { Role } from "../../shared/enums/role.enums";
 
-export class User {
-    userName: string;
-    token: string;
-    id: number;
-    role: Role;
-}
-
-export interface LoginContextInterface {
+export class RegisterUser {
     userName: string;
     password: string;
+    firstName: string;
+    lastName: string;
+}
+
+export class LoginUser {
+    userName: string;
+    password: string;
+}
+
+export class LoggedUser {
     token: string;
+    user: User;
+}
+
+export class User {
+    id: number;
+    userName: string;
+    firstName: string;
+    lastName: string;
+    roles: Role[];
 }
 
 export class UserInfo {
@@ -19,13 +31,6 @@ export class UserInfo {
     country: string;
     city: string;
     salary: string;
-}
-
-export class RegisterUser {
-    userName: string;
-    password: string;
-    firstName: string;
-    lastName: string;
 }
 
 export class UserFullInfo {

@@ -50,7 +50,7 @@ namespace AdminTemplate.Queries.Tests
             var password = _random.Next().ToString();
             var user = new User
             {
-                Username = _random.Next().ToString(),
+                UserName = _random.Next().ToString(),
                 Password = password.WithBCrypt(),
                 Roles = new List<UserRole>
                 {
@@ -64,12 +64,12 @@ namespace AdminTemplate.Queries.Tests
 
             var token = _random.Next().ToString();
             _tokenBuilder.Setup(tb => tb.Build(
-                user.Username,
+                user.UserName,
                 It.Is<string[]>(roles => roles.SequenceEqual(user.Roles.Select(x => x.Role.Name).ToArray())),
                     It.Is<DateTime>(d => d - expireTokenDate < TimeSpan.FromSeconds(1))))
                 .Returns(token);
 
-            var result = _query.Authenticate(user.Username, password);
+            var result = _query.Authenticate(user.UserName, password);
 
             result.User.Should().Be(user);
             result.Token.Should().Be(token);
@@ -82,12 +82,12 @@ namespace AdminTemplate.Queries.Tests
             var password = _random.Next().ToString();
             var user = new User
             {
-                Username = _random.Next().ToString(),
+                UserName = _random.Next().ToString(),
                 Password = password.WithBCrypt(),
             };
             _userList.Add(user);
 
-            Action execute = () => _query.Authenticate(user.Username, _random.Next().ToString());
+            Action execute = () => _query.Authenticate(user.UserName, _random.Next().ToString());
 
             execute.Should().Throw<BadRequestException>();
         }
@@ -98,13 +98,13 @@ namespace AdminTemplate.Queries.Tests
             var password = _random.Next().ToString();
             var user = new User
             {
-                Username = _random.Next().ToString(),
+                UserName = _random.Next().ToString(),
                 Password = password.WithBCrypt(),
                 IsDeleted = true
             };
             _userList.Add(user);
 
-            Action execute = () => _query.Authenticate(user.Username, password);
+            Action execute = () => _query.Authenticate(user.UserName, password);
 
             execute.Should().Throw<BadRequestException>();
         }

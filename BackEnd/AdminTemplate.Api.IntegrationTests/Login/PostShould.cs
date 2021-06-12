@@ -30,7 +30,7 @@ namespace AdminTemplate.Api.IntegrationTests.Login
             var password = "admin";
             var result = await Autheticate(username, password);
 
-            result.User.Username.Should().Be(username);
+            result.User.UserName.Should().Be(username);
         }
 
         public async Task<UserWithTokenModel> Autheticate(string username, string password)
@@ -58,7 +58,7 @@ namespace AdminTemplate.Api.IntegrationTests.Login
             var createdUser = await _client.PostAsync<UserModel>("api/Login/Register", requestItem);
 
             createdUser.Roles.Should().BeEmpty();
-            createdUser.Username.Should().Be(requestItem.Username);
+            createdUser.UserName.Should().Be(requestItem.Username);
             createdUser.LastName.Should().Be(requestItem.LastName);
             createdUser.FirstName.Should().Be(requestItem.FirstName);
 

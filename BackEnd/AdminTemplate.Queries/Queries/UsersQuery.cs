@@ -50,14 +50,14 @@ namespace AdminTemplate.Queries.Queries
         {
             var username = model.Username.Trim();
 
-            if (GetQuery().Any(u => u.Username == username))
+            if (GetQuery().Any(u => u.UserName == username))
             {
                 throw new BadRequestException("The username is already in use");
             }
 
             var user = new User
             {
-                Username = model.Username.Trim(),
+                UserName = model.Username.Trim(),
                 Password = model.Password.Trim().WithBCrypt(),
                 FirstName = model.FirstName.Trim(),
                 LastName = model.LastName.Trim(),
@@ -97,7 +97,7 @@ namespace AdminTemplate.Queries.Queries
                 throw new NotFoundException("User is not found");
             }
 
-            user.Username = model.Username;
+            user.UserName = model.Username;
             user.FirstName = model.FirstName;
             user.LastName = model.LastName;
 

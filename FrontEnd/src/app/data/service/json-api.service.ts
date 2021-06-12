@@ -1,7 +1,8 @@
 import { Injectable } from '@angular/core';
 import { Observable, of } from 'rxjs';
 import { CacheService } from '../../core/services/cache.service';
-import { User } from '../schema/user';
+import { Role } from '../../shared/enums/role.enums';
+import { LoggedUser, User } from '../schema/user';
 import data from '../service/json/data.json';
 
 @Injectable({
@@ -16,7 +17,7 @@ export class JsonApiService {
             case '/users':
                 return of(data.users);
             case '/users/id':
-                return of(data.usersFullInfo.find(u => u.id == params[0]));
+                return of(data.usersFullInfo.find(u => u.id == 1));
             case '/login':
                 {
                     var defaultUser = {
@@ -24,26 +25,28 @@ export class JsonApiService {
                         password: 'admin',
                         token: '12345',
                         id: 1,
-                        role: 0
+                        role: Role.Admin
                     };
 
+                    var user = new LoggedUser();
+
                     if (params[0] == defaultUser.username && params[1] == defaultUser.password) {
-                        var user = new User();
-                        user.id = defaultUser.id;
-                        user.userName = defaultUser.username;
                         user.token = defaultUser.token;
-                        user.role = defaultUser.role;
+                        user.user = new User();
+                        user.user.id = defaultUser.id;
+                        user.user.userName = defaultUser.username;
+                        user.user.roles = [];
+                        user.user.roles.push(defaultUser.role);
 
                         this.cacheService.save({
                             key: "user",
                             data: user,
                             expirationMins: 60
                         });
-
-                        return of(user);
                     }
 
-                    return null;
+                    return of(user);
+
                 }
             case '/dashboard/bugs':
                 return of(data.dashboard.list.bugs);

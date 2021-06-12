@@ -1,6 +1,7 @@
 enum Role {
-    Admin,
-    Client
+    Admin = "Administrator",
+    Manager = "Manager",
+    AdministratorOrManager = "Administrator,Manager"
 }
 
 export { Role };
