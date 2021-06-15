@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { of, throwError, Observable } from 'rxjs';
+import { of, Observable } from 'rxjs';
 import 'rxjs/add/operator/map';
 
 import { LoggedUser, LoginUser } from '../../data/schema/user';
@@ -19,7 +19,7 @@ export class AuthService {
     login(loginContext: LoginUser): Observable<any> {
         return this.userService.login(loginContext.userName, loginContext.password)
             .map(user => {
-                if (user != null || user.token != null) {
+                if (user != null && user.token != null) {
                     this.cacheService.save({
                         key: "user",
                         data: user,

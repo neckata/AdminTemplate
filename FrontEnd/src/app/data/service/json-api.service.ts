@@ -1,4 +1,6 @@
 import { Injectable } from '@angular/core';
+import { MatSnackBar } from '@angular/material/snack-bar';
+import { TranslateService } from '@ngx-translate/core';
 import { Observable, of } from 'rxjs';
 import { CacheService } from '../../core/services/cache.service';
 import { Role } from '../../shared/enums/role.enums';
@@ -9,7 +11,9 @@ import data from '../service/json/data.json';
     providedIn: 'root'
 })
 export class JsonApiService {
-    constructor(private cacheService: CacheService) {
+    constructor(private cacheService: CacheService,
+        private _snackBar: MatSnackBar,
+        private _translateService: TranslateService) {
     }
 
     get(url: string, ...params: any): Observable<any> {
@@ -44,6 +48,9 @@ export class JsonApiService {
                             expirationMins: 60
                         });
                     }
+                    else {
+                        this.openSnackBar("Wrong Password or UserName", null, true);
+                    }
 
                     return of(user);
 
@@ -58,5 +65,15 @@ export class JsonApiService {
                 const id = url.substring(url.lastIndexOf('/') + 1);
                 return of(data.users[id]);
         }
+    }
+
+    private openSnackBar(message: string, action?: string, isError?: boolean) {
+        var translatedMessage = isError ? message : this._translateService.instant("messages." + message);
+        var transaltedAction = action != null ? this._translateService.instant("messages." + action) : "OK";
+
+        this._snackBar.open(translatedMessage, transaltedAction, {
+            duration: isError ? 10000 : 5000,
+            panelClass: isError ? ['alert-danger'] : ['alert-success']
+        });
     }
 }

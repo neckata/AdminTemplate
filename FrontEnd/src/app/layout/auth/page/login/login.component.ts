@@ -34,7 +34,11 @@ export class LoginComponent implements OnDestroy {
         this.sub = this.authService.login(user)
             .pipe(
                 delay(1500),
-                tap(() => this.router.navigate(['/dashboard'])),
+                tap(user => {
+                    if (user != null) {
+                        this.router.navigate(['/dashboard'])
+                    }
+                }),
                 finalize(() => this.isLoading = false))
             .subscribe();
     }
