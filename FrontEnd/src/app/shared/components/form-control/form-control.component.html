@@ -1,5 +1,8 @@
 <div [formGroup]="group">
-	<mat-form-field>
+
+	<input *ngIf="formType == formTypes.File" [placeholder]="placeholder | translate" [formControlName]="name" type="file">
+
+	<mat-form-field *ngIf="formType != formTypes.File">
 
 		<input *ngIf="formType == formTypes.Text" matInput [placeholder]="placeholder | translate" [formControlName]="name" type="text">
 

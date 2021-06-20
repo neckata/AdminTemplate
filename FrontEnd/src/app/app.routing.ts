@@ -10,6 +10,7 @@ import { AdminLayoutComponent } from './layout/admin-layout/admin-layout.compone
 import { NotificationsComponent } from './modules/notifications/notifications.component';
 import { AuthLayoutComponent } from './layout/auth-layout/auth-layout.component';
 import { CalendarComponent } from './modules/calendar/calendar.component';
+import { EmailComponent } from './modules/email/email.component';
 
 const routes: Routes = [
     {
@@ -23,7 +24,8 @@ const routes: Routes = [
             { path: 'typography', component: TypographyComponent },
             { path: 'maps', component: MapsComponent },
             { path: 'calendar', component: CalendarComponent },
-            { path: 'notifications', component: NotificationsComponent }
+            { path: 'notifications', component: NotificationsComponent },
+            { path: 'email', component: EmailComponent }
         ]
     },
     {

@@ -25,6 +25,7 @@ import { CardChartComponent } from './modules/dashboard/card-chart/card-chart.co
 import { CardListComponent } from './modules/dashboard/card-list/card-list.component';
 import { CardTableComponent } from './modules/dashboard/card-table/card-table.component';
 import { CalendarComponent } from './modules/calendar/calendar.component';
+import { EmailComponent } from './modules/email/email.component';
 
 @NgModule({
     imports: [
@@ -65,6 +66,7 @@ import { CalendarComponent } from './modules/calendar/calendar.component';
         CardListComponent,
         CardTableComponent,
         CalendarComponent,
+        EmailComponent,
 
     ],
     providers: [],

@@ -74,6 +74,13 @@
   "calendar": {
     "title": "Google Default Calendar"
   },
+  "email": {
+    "title": "Email",
+    "name": "Name",
+    "email": "Email",
+    "message": "Message",
+    "send": "Send"
+  },
   "dashboard": {
     "chart1": {
       "title": "Daily Sales",

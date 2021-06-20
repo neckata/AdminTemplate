@@ -1,7 +1,8 @@
 enum FormType {
     Text,
     TextArea,
-    Password
+    Password,
+    File
 }
 
 export { FormType };
