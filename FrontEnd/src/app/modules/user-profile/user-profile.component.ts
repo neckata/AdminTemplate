@@ -34,7 +34,7 @@ export class UserProfileComponent implements OnInit {
     ngOnInit(): void {
         this.userService.getUser(this.authService.currentUser.user.id).subscribe(user => {
             this.profileForm.patchValue({
-                role: this.roleTypes[this.authService.currentUser.user.roles[0]],
+                role: this.authService.currentUser.user.roles[0],
                 userName: this.authService.currentUser.user.userName,
                 email: user.email,
                 firstName: this.authService.currentUser.user.firstName,

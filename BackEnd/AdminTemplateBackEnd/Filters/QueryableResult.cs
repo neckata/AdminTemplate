@@ -22,12 +22,9 @@ namespace AdminTemplate.Filters
 
             var commands = context.HttpContext.Request.Query.ContainsKey("commands") ? context.HttpContext.Request.Query["commands"] : new StringValues();
 
-            //TODO
-            dynamic data = null;
-
             var toArray = typeof(Enumerable).GetMethod("ToArray").MakeGenericMethod(typeof(object));
 
-            var fetchedData = toArray.Invoke(null, new object[] { data });
+            var fetchedData = toArray.Invoke(null, new object[] { query });
 
             var total = System.Linq.Queryable.Count(query);
             context.Result = new OkObjectResult(new DataResult { Data = fetchedData, Total = total });

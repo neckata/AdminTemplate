@@ -110,7 +110,7 @@ namespace AdminTemplate.Queries.Tests
             var result = await _query.Create(model);
 
             result.Password.Should().NotBeEmpty();
-            result.Username.Should().Be(model.Username);
+            result.UserName.Should().Be(model.Username);
             result.LastName.Should().Be(model.LastName);
             result.FirstName.Should().Be(model.FirstName);
 
@@ -150,7 +150,7 @@ namespace AdminTemplate.Queries.Tests
                 Username = _random.Next().ToString(),
             };
 
-            _userList.Add(new User { Username = model.Username });
+            _userList.Add(new User { UserName = model.Username });
 
             Action create = () =>
             {
@@ -176,7 +176,7 @@ namespace AdminTemplate.Queries.Tests
             var result = await _query.Update(user.ID, model);
 
             result.Should().Be(user);
-            result.Username.Should().Be(model.Username);
+            result.UserName.Should().Be(model.Username);
             result.LastName.Should().Be(model.LastName);
             result.FirstName.Should().Be(model.FirstName);
 

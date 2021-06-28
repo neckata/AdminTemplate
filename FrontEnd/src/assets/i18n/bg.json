@@ -69,7 +69,8 @@
     "code": "Postal Code",
     "info": "Info about me",
     "aboutMe": "About me",
-    "updateProfile": "Update Profile"
+    "updateProfile": "Update Profile",
+    "role": "Role"
   },
   "calendar": {
     "title": "Google Default Calendar"

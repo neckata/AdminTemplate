@@ -69,7 +69,8 @@
     "code": "Postal Code",
     "info": "Info about me",
     "aboutMe": "About me",
-    "updateProfile": "Update Profile"
+    "updateProfile": "Update Profile",
+    "role": "Role"
   },
   "calendar": {
     "title": "Google Default Calendar"
@@ -79,7 +80,9 @@
     "name": "Name",
     "email": "Email",
     "message": "Message",
-    "send": "Send"
+    "send": "Send",
+    "error": "Error in sending email",
+    "success": "Email was sent successfully"
   },
   "dashboard": {
     "chart1": {

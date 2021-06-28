@@ -1,6 +1,8 @@
 using System;
+using System.Collections.Generic;
 using System.IO;
 using AdminTemplate.Data.Access.DAL;
+using AdminTemplate.Data.Model;
 using AdminTemplate.Filters;
 using AdminTemplate.IoC;
 using AdminTemplate.Security.Auth;
@@ -15,6 +17,10 @@ using Microsoft.Extensions.Logging;
 using Microsoft.IdentityModel.Tokens;
 using Newtonsoft.Json;
 using Swashbuckle.AspNetCore.Swagger;
+using AdminTemplate.Data.Access.Helpers;
+using AdminTemplate.Data.Access.Constants;
+using Microsoft.EntityFrameworkCore.Storage;
+using Microsoft.EntityFrameworkCore.Infrastructure;
 
 namespace AdminTemplate
 {
@@ -72,7 +78,7 @@ namespace AdminTemplate
                     .AddAuthenticationSchemes(JwtBearerDefaults.AuthenticationScheme)
                     .RequireAuthenticatedUser().Build());
             });
-           
+
             services.AddMvc(options => { options.Filters.Add(new ApiExceptionFilter()); })
                 .AddJsonOptions(o =>
                 {
@@ -140,7 +146,32 @@ namespace AdminTemplate
             using (var serviceScope = app.ApplicationServices.GetRequiredService<IServiceScopeFactory>().CreateScope())
             {
                 var context = serviceScope.ServiceProvider.GetService<MainDbContext>();
+
+                bool initDataBase = !context.Database.GetService<IRelationalDatabaseCreator>().Exists();
+
                 context.Database.Migrate();
+
+                if (initDataBase)
+                {
+                    Role admin = new Role { Name = Roles.Administrator };
+                    Role manager = new Role { Name = Roles.Manager };
+                    Role adminOrManager = new Role { Name = Roles.AdministratorOrManager };
+
+                    context.Add(admin);
+                    context.Add(manager);
+                    context.Add(adminOrManager);
+                    context.SaveChanges();
+
+                    User user = new User()
+                    {
+                        Password = "admin".WithBCrypt(),
+                        UserName = "admin",
+                        Roles = new List<UserRole> { new UserRole { RoleID = admin.ID } }
+                    };
+
+                    context.Add(user);
+                    context.SaveChanges();
+                }
             }
         }
     }
