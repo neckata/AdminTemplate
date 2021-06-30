@@ -66,8 +66,7 @@ import { EmailComponent } from './modules/email/email.component';
         CardListComponent,
         CardTableComponent,
         CalendarComponent,
-        EmailComponent,
-
+        EmailComponent
     ],
     providers: [],
     bootstrap: [AppComponent]

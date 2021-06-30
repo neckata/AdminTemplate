@@ -97,11 +97,14 @@ namespace AdminTemplate.Queries.Queries
                 throw new NotFoundException("User is not found");
             }
 
-            user.UserName = model.Username;
             user.FirstName = model.FirstName;
             user.LastName = model.LastName;
-
-            AddUserRoles(user, model.Roles);
+            user.Email = model.Email;
+            user.Adress = model.Adress;
+            user.City = model.City;
+            user.Country = model.Country;
+            user.Info = model.Info;
+            user.Code = model.Code;
 
             await _uow.CommitAsync();
             return user;

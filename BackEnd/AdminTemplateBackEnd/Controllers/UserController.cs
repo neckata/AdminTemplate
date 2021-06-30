@@ -36,8 +36,8 @@ namespace AdminTemplate.Controllers
         [HttpGet("{id}")]
         public UserModel Get(int id)
         {
-            var item = _query.Get(id);
-            var model = _mapper.Map<UserModel>(item);
+            var user = _query.Get(id);
+            var model = _mapper.Map<UserModel>(user);
             return model;
         }
 

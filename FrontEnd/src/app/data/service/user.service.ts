@@ -16,7 +16,18 @@ export class UserService {
     }
 
     public getUser(userId: number): Observable<UserFullInfo> {
-        return this.jsonApiService.get("/users/id", userId);
+        if (isDevMode()) {
+            return this.http.get<UserFullInfo>({ url: 'users/' + userId })
+        }
+        else {
+            return this.jsonApiService.get("/users/id", userId);
+        }
+    }
+
+    public updateUser(user: UserFullInfo): Observable<UserFullInfo> {
+        if (isDevMode()) {
+            return this.http.put<UserFullInfo>({ url: 'users/' + user.id, body: user, snackBarMessage: "SuccessUpdateUser" })
+        }
     }
 
     public login(userName: string, password: string): Observable<LoggedUser> {

@@ -21,8 +21,8 @@ export class TableListComponent implements AfterViewInit {
     @ViewChild(MatSort) sort: MatSort;
 
     constructor(private userService: UserService) {
-        userService.getUsers().subscribe((data: UserInfo[]) => {
-            this.data = data
+        this.userService.getUsers().subscribe((data: UserInfo[]) => {
+            this.data = data;
             this.dataSource = new MatTableDataSource(data);
         });
     }

@@ -31,10 +31,8 @@ namespace AdminTemplate.Api.IntegrationTests.Users
 
             var requestItem = new UpdateUserModel
             {
-                Username = "TU_Update_" + _random.Next(),
                 FirstName = _random.Next().ToString(),
-                LastName = _random.Next().ToString(),
-                Roles = new[] { Roles.Manager }
+                LastName = _random.Next().ToString()
             };
 
             await _client.PutAsync<UserModel>($"api/Users/{item.ID}", requestItem);

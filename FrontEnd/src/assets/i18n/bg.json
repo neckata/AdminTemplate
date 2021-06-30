@@ -4,7 +4,8 @@
   },
   "messages": {
     "SuccessRegister": "User registers successfully!",
-    "wrongLogin": "Invalid username or password"
+    "wrongLogin": "Invalid username or password",
+    "SuccessUpdateUser": "User has been updated successfully!"
   },
   "errors": {
     "required": "{{field}} is required.",

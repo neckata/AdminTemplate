@@ -5,6 +5,7 @@ import { Observable, of } from 'rxjs'
 import { switchMap, catchError } from 'rxjs/operators'
 import { MatSnackBar } from '@angular/material/snack-bar'
 import { TranslateService } from '@ngx-translate/core'
+import { LoggedUser } from '../../data/schema/user'
 
 export enum Verbs {
     GET = 'GET',
@@ -21,7 +22,8 @@ export class HttpClientService {
         'Content-Type': 'application/json',
         'Access-Control-Allow-Origin': '*',
         'Access-Control-Allow-Credentials': 'true',
-        'Access-Control-Allow-Headers': 'Content-Type'
+        'Access-Control-Allow-Headers': 'Content-Type',
+        'Authorization': ''
     });
 
     private domain = "https://localhost:44395/api/";
@@ -64,6 +66,11 @@ export class HttpClientService {
             }
         }
 
+        var cachedUser = this._cacheService.load("user");
+        if (cachedUser != null) {
+            var currentToken = (cachedUser as LoggedUser).token;
+            this.headers = this.headers.set("Authorization", `Bearer ${currentToken}`);
+        }
         return this.http.request<T>(verb, this.domain + options.url, {
             body: options.body,
             headers: this.headers

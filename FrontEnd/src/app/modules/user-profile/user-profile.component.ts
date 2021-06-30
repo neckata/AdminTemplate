@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup } from '@angular/forms';
 import { Validators } from '@angular/forms';
 import { AuthService } from '../../core/services/auth.service';
+import { UserFullInfo } from '../../data/schema/user';
 import { UserService } from '../../data/service/user.service';
 import { FormType } from '../../shared/enums/form-types.enum';
 import { Role } from '../../shared/enums/role.enums';
@@ -37,8 +38,8 @@ export class UserProfileComponent implements OnInit {
                 role: this.authService.currentUser.user.roles[0],
                 userName: this.authService.currentUser.user.userName,
                 email: user.email,
-                firstName: this.authService.currentUser.user.firstName,
-                lastName: this.authService.currentUser.user.lastName,
+                firstName: user.firstName,
+                lastName: user.lastName,
                 adress: user.adress,
                 city: user.city,
                 country: user.country,
@@ -49,6 +50,13 @@ export class UserProfileComponent implements OnInit {
     }
 
     onSubmit(): void {
+        var updateUser = new UserFullInfo();
+        updateUser.id = this.authService.currentUser.user.id;
 
+        Object.keys(this.profileForm.controls).forEach(key => {
+            updateUser[key] = this.profileForm.controls[key].value;
+        });
+
+        this.userService.updateUser(updateUser).subscribe();
     }
 }

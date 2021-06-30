@@ -168,7 +168,6 @@ namespace AdminTemplate.Queries.Tests
 
             var model = new UpdateUserModel
             {
-                Username = _random.Next().ToString(),
                 LastName = _random.Next().ToString(),
                 FirstName = _random.Next().ToString(),
             };
@@ -176,7 +175,6 @@ namespace AdminTemplate.Queries.Tests
             var result = await _query.Update(user.ID, model);
 
             result.Should().Be(user);
-            result.UserName.Should().Be(model.Username);
             result.LastName.Should().Be(model.LastName);
             result.FirstName.Should().Be(model.FirstName);
 
@@ -205,8 +203,7 @@ namespace AdminTemplate.Queries.Tests
             var model = new UpdateUserModel
             {
                 LastName = _random.Next().ToString(),
-                FirstName = _random.Next().ToString(),
-                Roles = new[] { role.Name }
+                FirstName = _random.Next().ToString()
             };
 
             var result = await _query.Update(user.ID, model);

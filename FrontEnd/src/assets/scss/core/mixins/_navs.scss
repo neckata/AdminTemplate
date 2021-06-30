@@ -1,43 +1,44 @@
 @mixin bmd-tabs-color($color, $active-color, $active-border, $disabled-link-color, $disabled-link-hover-color) {
-  .nav-link {
-    color: $color;
+    .nav-link {
+        color: $color;
+        cursor: pointer !important;
 
-    &.active {
-      color: $active-color;
-      border-color: $active-border;
-      @include hover-focus {
-        border-color: $active-border;
-      }
+        &.active {
+            color: $active-color;
+            border-color: $active-border;
+
+            @include hover-focus {
+                border-color: $active-border;
+            }
+        }
+        // Disabled state lightens text and removes hover/tab effects
+        &.disabled {
+            color: $disabled-link-color;
+
+            @include plain-hover-focus {
+                color: $disabled-link-hover-color;
+            }
+        }
     }
-
-    // Disabled state lightens text and removes hover/tab effects
-    &.disabled {
-      color: $disabled-link-color;
-
-      @include plain-hover-focus {
-        color: $disabled-link-hover-color;
-      }
-    }
-  }
 }
 
 @mixin set-wizard-color($color) {
 
-    .moving-tab{
+    .moving-tab {
         background-color: $color;
         @include shadow-big-color($color);
     }
 
-    .picture{
-        &:hover{
+    .picture {
+        &:hover {
             border-color: $color;
         }
     }
 
-    .choice{
+    .choice {
         &:hover,
-        &.active{
-            .icon{
+        &.active {
+            .icon {
                 border-color: $color;
                 color: $color;
             }
@@ -45,8 +46,8 @@
     }
 
 
-    .checkbox input[type=checkbox]:checked + .checkbox-material{
-        .check{
+    .checkbox input[type=checkbox]:checked + .checkbox-material {
+        .check {
             background-color: $color;
         }
     }

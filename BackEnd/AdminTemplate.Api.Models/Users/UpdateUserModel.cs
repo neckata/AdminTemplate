@@ -6,11 +6,8 @@ namespace AdminTemplate.Api.Models.Users
     {
         public UpdateUserModel()
         {
-            Roles = new string[0];
-        }
 
-        [Required]
-        public string Username { get; set; }
+        }
 
         [Required]
         public string LastName { get; set; }
@@ -18,6 +15,16 @@ namespace AdminTemplate.Api.Models.Users
         [Required]
         public string FirstName { get; set; }
 
-        public string[] Roles { get; set; }
+        public string Email { get; set; }
+
+        public string Info { get; set; }
+
+        public string Adress { get; set; }
+
+        public string City { get; set; }
+
+        public string Country { get; set; }
+
+        public string Code { get; set; }
     }
 }
