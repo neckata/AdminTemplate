@@ -9,7 +9,7 @@ export class AuthGuard implements CanActivate {
     canActivate(): boolean {
         var isUserIn = this.authService.isUserIn();
         if (!isUserIn) {
-            this.router.navigate(['/auth']);
+            this.router.navigate(['/landing']);  //If we are not using landing default must be auth
         }
         return isUserIn;
     }

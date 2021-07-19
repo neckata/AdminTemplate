@@ -1,0 +1,533 @@
+/* --------------------------------
+
+Nucleo Outline Web Font - nucleoapp.com/
+License - nucleoapp.com/license/
+Created using IcoMoon - icomoon.io
+
+-------------------------------- */
+
+@font-face {
+  font-family: 'Nucleo Outline';
+  src: url('../../fonts/nucleo-outline.eot');
+  src: url('../../fonts/nucleo-outline.eot') format('embedded-opentype'),
+  url('../../fonts/nucleo-outline.woff2') format('woff2'),
+  url('../../fonts/nucleo-outline.woff') format('woff'),
+  url('../../fonts/nucleo-outline.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+/*------------------------
+	base class definition
+-------------------------*/
+
+.demo-angular-icons {
+  display: inline-block;
+  font: normal normal normal 14px/1 'Nucleo Outline';
+  font-size: inherit;
+  speak: none;
+  text-transform: none;
+  /* Better Font Rendering */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/*------------------------
+  change icon size
+-------------------------*/
+
+/*----------------------------------
+  add a square/circle background
+-----------------------------------*/
+
+.demo-angular-icons.circle {
+  padding: 0.33333333em;
+  vertical-align: -16%;
+  background-color: #eee;
+}
+
+.demo-angular-icons.circle {
+  border-radius: 50%;
+}
+
+/*------------------------
+  list icons
+-------------------------*/
+
+.nc-icon-ul {
+  padding-left: 0;
+  margin-left: 2.14285714em;
+  list-style-type: none;
+}
+
+.nc-icon-ul > li {
+  position: relative;
+}
+
+.nc-icon-ul > li > .demo-angular-icons {
+  position: absolute;
+  left: -1.57142857em;
+  top: 0.14285714em;
+  text-align: center;
+}
+
+.nc-icon-ul > li > .demo-angular-icons.circle {
+  top: -0.19047619em;
+  left: -1.9047619em;
+}
+
+/*------------------------
+  spinning icons
+-------------------------*/
+
+.demo-angular-icons.spin {
+  -webkit-animation: nc-icon-spin 2s infinite linear;
+  -moz-animation: nc-icon-spin 2s infinite linear;
+  animation: nc-icon-spin 2s infinite linear;
+}
+
+@-webkit-keyframes nc-icon-spin {
+  0% {
+    -webkit-transform: rotate(0deg);
+  }
+
+  100% {
+    -webkit-transform: rotate(360deg);
+  }
+}
+
+@-moz-keyframes nc-icon-spin {
+  0% {
+    -moz-transform: rotate(0deg);
+  }
+
+  100% {
+    -moz-transform: rotate(360deg);
+  }
+}
+
+@keyframes nc-icon-spin {
+  0% {
+    -webkit-transform: rotate(0deg);
+    -moz-transform: rotate(0deg);
+    -ms-transform: rotate(0deg);
+    -o-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+
+  100% {
+    -webkit-transform: rotate(360deg);
+    -moz-transform: rotate(360deg);
+    -ms-transform: rotate(360deg);
+    -o-transform: rotate(360deg);
+    transform: rotate(360deg);
+  }
+}
+
+/*------------------------
+  rotated/flipped icons
+-------------------------*/
+
+/*------------------------
+	font icons
+-------------------------*/
+
+.demo-angular-icons.ui-1_check:before{
+    content: "\ea22";
+}
+
+.demo-angular-icons.ui-1_email-85:before {
+  content: "\ea2a";
+}
+
+.demo-angular-icons.arrows-1_cloud-download-93:before {
+  content: "\ea21";
+}
+
+.demo-angular-icons.arrows-1_cloud-upload-94:before {
+  content: "\ea24";
+}
+
+.demo-angular-icons.arrows-1_minimal-down:before {
+  content: "\ea39";
+}
+
+.demo-angular-icons.arrows-1_minimal-left:before {
+  content: "\ea3a";
+}
+
+.demo-angular-icons.arrows-1_minimal-right:before {
+  content: "\ea3b";
+}
+
+.demo-angular-icons.arrows-1_minimal-up:before {
+  content: "\ea3c";
+}
+
+.demo-angular-icons.arrows-1_refresh-69:before {
+  content: "\ea44";
+}
+
+.demo-angular-icons.arrows-1_share-66:before {
+  content: "\ea4c";
+}
+
+.demo-angular-icons.business_badge:before {
+  content: "\ea09";
+}
+
+.demo-angular-icons.business_bank:before {
+  content: "\ea0a";
+}
+
+.demo-angular-icons.business_briefcase-24:before {
+  content: "\ea13";
+}
+
+.demo-angular-icons.business_bulb-63:before {
+  content: "\ea15";
+}
+
+.demo-angular-icons.business_chart-bar-32:before {
+  content: "\ea1e";
+}
+
+.demo-angular-icons.business_chart-pie-36:before {
+  content: "\ea1f";
+}
+
+.demo-angular-icons.business_globe:before {
+  content: "\ea2f";
+}
+
+.demo-angular-icons.business_money-coins:before {
+  content: "\ea40";
+}
+
+.demo-angular-icons.clothes_tie-bow:before {
+  content: "\ea5b";
+}
+
+.demo-angular-icons.design_vector:before {
+  content: "\ea61";
+}
+
+.demo-angular-icons.design_app:before {
+  content: "\ea08";
+}
+
+.demo-angular-icons.design_bullet-list-67:before {
+  content: "\ea14";
+}
+
+.demo-angular-icons.design_image:before {
+  content: "\ea33";
+}
+
+.demo-angular-icons.design_palette:before {
+  content: "\ea41";
+}
+
+.demo-angular-icons.design_scissors:before {
+  content: "\ea4a";
+}
+
+.demo-angular-icons.design-2_html5:before {
+  content: "\ea32";
+}
+
+.demo-angular-icons.design-2_ruler-pencil:before {
+  content: "\ea48";
+}
+
+.demo-angular-icons.emoticons_satisfied:before {
+  content: "\ea49";
+}
+
+.demo-angular-icons.files_box:before {
+  content: "\ea12";
+}
+
+.demo-angular-icons.files_paper:before {
+  content: "\ea43";
+}
+
+.demo-angular-icons.files_single-copy-04:before {
+  content: "\ea52";
+}
+
+.demo-angular-icons.health_ambulance:before {
+  content: "\ea07";
+}
+
+.demo-angular-icons.loader_gear:before {
+  content: "\ea4e";
+}
+
+.demo-angular-icons.loader_refresh:before {
+  content: "\ea44";
+}
+
+.demo-angular-icons.location_bookmark:before {
+  content: "\ea10";
+}
+
+.demo-angular-icons.location_compass-05:before {
+  content: "\ea25";
+}
+
+.demo-angular-icons.location_map-big:before {
+  content: "\ea3d";
+}
+
+.demo-angular-icons.location_pin:before {
+  content: "\ea47";
+}
+
+.demo-angular-icons.location_world:before {
+  content: "\ea63";
+}
+
+.demo-angular-icons.media-1_album:before {
+  content: "\ea02";
+}
+
+.demo-angular-icons.media-1_button-pause:before {
+  content: "\ea16";
+}
+
+.demo-angular-icons.media-1_button-play:before {
+  content: "\ea18";
+}
+
+.demo-angular-icons.media-1_button-power:before {
+  content: "\ea19";
+}
+
+.demo-angular-icons.media-1_camera-compact:before {
+  content: "\ea1c";
+}
+
+.demo-angular-icons.media-2_note-03:before {
+  content: "\ea3f";
+}
+
+.demo-angular-icons.media-2_sound-wave:before {
+  content: "\ea57";
+}
+
+.demo-angular-icons.objects_diamond:before {
+  content: "\ea29";
+}
+
+.demo-angular-icons.objects_globe:before {
+  content: "\ea2f";
+}
+
+.demo-angular-icons.objects_key-25:before {
+  content: "\ea38";
+}
+
+.demo-angular-icons.objects_planet:before {
+  content: "\ea46";
+}
+
+.demo-angular-icons.objects_spaceship:before {
+  content: "\ea55";
+}
+
+.demo-angular-icons.objects_support-17:before {
+  content: "\ea56";
+}
+
+.demo-angular-icons.objects_umbrella-13:before {
+  content: "\ea5f";
+}
+
+.demo-angular-icons.education_agenda-bookmark:before {
+  content: "\ea01";
+}
+
+.demo-angular-icons.education_atom:before {
+  content: "\ea0c";
+}
+
+.demo-angular-icons.education_glasses:before {
+  content: "\ea2d";
+}
+
+.demo-angular-icons.education_hat:before {
+  content: "\ea30";
+}
+
+.demo-angular-icons.education_paper:before {
+  content: "\ea42";
+}
+
+.demo-angular-icons.shopping_bag-16:before {
+  content: "\ea0d";
+}
+
+.demo-angular-icons.shopping_basket:before {
+  content: "\ea0b";
+}
+
+.demo-angular-icons.shopping_box:before {
+  content: "\ea11";
+}
+
+.demo-angular-icons.shopping_cart-simple:before {
+  content: "\ea1d";
+}
+
+.demo-angular-icons.shopping_credit-card:before {
+  content: "\ea28";
+}
+
+.demo-angular-icons.shopping_delivery-fast:before {
+  content: "\ea27";
+}
+
+.demo-angular-icons.shopping_shop:before {
+  content: "\ea50";
+}
+
+.demo-angular-icons.shopping_tag-content:before {
+  content: "\ea59";
+}
+
+.demo-angular-icons.sport_trophy:before {
+  content: "\ea5d";
+}
+
+.demo-angular-icons.sport_user-run:before {
+  content: "\ea60";
+}
+
+.demo-angular-icons.tech_controller-modern:before {
+  content: "\ea26";
+}
+
+.demo-angular-icons.tech_headphones:before {
+  content: "\ea31";
+}
+
+.demo-angular-icons.tech_laptop:before {
+  content: "\ea36";
+}
+
+.demo-angular-icons.tech_mobile:before {
+  content: "\ea3e";
+}
+
+.demo-angular-icons.tech_tablet:before {
+  content: "\ea58";
+}
+
+.demo-angular-icons.tech_tv:before {
+  content: "\ea5e";
+}
+
+.demo-angular-icons.tech_watch-time:before {
+  content: "\ea62";
+}
+
+.demo-angular-icons.text_align-center:before {
+  content: "\ea05";
+}
+
+.demo-angular-icons.text_align-left:before {
+  content: "\ea06";
+}
+
+.demo-angular-icons.text_bold:before {
+  content: "\ea0e";
+}
+
+.demo-angular-icons.text_caps-small:before {
+  content: "\ea1b";
+}
+
+.demo-angular-icons.gestures_tap-01:before {
+  content: "\ea5a";
+}
+
+.demo-angular-icons.transportation_air-baloon:before {
+  content: "\ea03";
+}
+
+.demo-angular-icons.transportation_bus-front-12:before {
+  content: "\ea17";
+}
+
+.demo-angular-icons.travel_info:before {
+  content: "\ea04";
+}
+
+.demo-angular-icons.travel_istanbul:before {
+  content: "\ea34";
+}
+
+.demo-angular-icons.ui-1_bell-53:before {
+  content: "\ea0f";
+}
+
+.demo-angular-icons.ui-1_calendar-60:before {
+  content: "\ea1a";
+}
+
+.demo-angular-icons.ui-1_lock-circle-open:before {
+  content: "\ea35";
+}
+
+.demo-angular-icons.ui-1_send:before {
+  content: "\ea4d";
+}
+
+.demo-angular-icons.ui-1_settings-gear-63:before {
+  content: "\ea4e";
+}
+
+.demo-angular-icons.ui-1_simple-add:before {
+  content: "\ea4f";
+}
+
+.demo-angular-icons.ui-1_simple-delete:before {
+  content: "\ea54";
+}
+
+.demo-angular-icons.ui-1_simple-remove:before {
+  content: "\ea53";
+}
+
+.demo-angular-icons.ui-1_zoom-bold:before {
+  content: "\ea64";
+}
+
+.demo-angular-icons.ui-2_chat-round:before {
+  content: "\ea20";
+}
+
+.demo-angular-icons.ui-2_favourite-28:before {
+  content: "\ea2b";
+}
+
+.demo-angular-icons.ui-2_like:before {
+  content: "\ea37";
+}
+
+.demo-angular-icons.ui-2_settings-90:before {
+  content: "\ea4b";
+}
+
+.demo-angular-icons.ui-2_time-alarm:before {
+  content: "\ea5c";
+}
+
+.demo-angular-icons.users_circle-08:before {
+  content: "\ea23";
+}
+
+.demo-angular-icons.users_single-02:before {
+  content: "\ea51";
+}

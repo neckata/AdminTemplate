@@ -1,0 +1,78 @@
+// display flex was causing errors
+.carousel-item-next,
+.carousel-item-prev,
+.carousel-item.active {
+    display: block;
+}
+
+.carousel {
+    .carousel-inner {
+        box-shadow: $box-shadow-raised;
+    }
+
+    .demo-angular-icons {
+        font-size: 2em;
+    }
+}
+
+ngb-carousel {
+    .carousel-caption {
+        color: black;
+        right: inherit;
+        left: inherit;
+        margin-left: 400px;
+        margin-right: 100px;
+        text-align: left;
+    }
+
+    &:focus {
+        outline: none;
+    }
+
+    .carousel-item {
+        img {
+            margin-left: 100px;
+            height: 300px;
+            width: 300px;
+        }
+    }
+
+    .carousel-indicators li {
+        background-color: $primary-color;
+    }
+
+    .carousel-control-next {
+        width: inherit !important;
+        margin-right: 20px
+    }
+
+    .carousel-control-prev {
+        width: inherit !important;
+        margin-left: 20px
+    }
+
+    .carousel-control-prev-icon,
+    .carousel-control-next-icon {
+        height: 80px;
+        width: 80px;
+        outline: black;
+        background-size: 100%, 100%;
+        border-radius: 50%;
+        border: 3px solid black;
+        background-image: none;
+    }
+
+    .carousel-control-next-icon:after {
+        content: '>';
+        font-size: 50px;
+        font-weight: bolder;
+        color: $primary-color;
+    }
+
+    .carousel-control-prev-icon:after {
+        content: '<';
+        font-size: 50px;
+        font-weight: bolder;
+        color: $primary-color;
+    }
+}

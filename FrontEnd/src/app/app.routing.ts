@@ -11,6 +11,7 @@ import { NotificationsComponent } from './modules/notifications/notifications.co
 import { AuthLayoutComponent } from './layout/auth-layout/auth-layout.component';
 import { CalendarComponent } from './modules/calendar/calendar.component';
 import { EmailComponent } from './modules/email/email.component';
+import { LandingPageComponent } from './layout/landing-page/landing-page.component';
 
 const routes: Routes = [
     {
@@ -29,6 +30,11 @@ const routes: Routes = [
         ]
     },
     {
+        path: 'landing',
+        component: LandingPageComponent,
+        loadChildren: () => import('./layout/landing/landing-page.module').then(m => m.LandingPageModule)
+    },
+    {
         path: 'auth',
         component: AuthLayoutComponent,
         loadChildren: () => import('./layout/auth/auth.module').then(m => m.AuthModule)
@@ -36,7 +42,7 @@ const routes: Routes = [
     // Fallback when no prior routes is matched
     {
         path: '**',
-        redirectTo: 'auth',
+        redirectTo: 'landing',  //If we are not using landing default must be auth
         pathMatch: 'full'
     }
 ];

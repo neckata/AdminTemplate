@@ -5,7 +5,6 @@ import { AppRoutingModule } from './app.routing';
 import { CoreModule } from './core/core.module';
 
 import { AppComponent } from './app.component';
-import { AgmCoreModule } from '@agm/core';
 import { SharedModule } from './shared/shared.module';
 import { BrowserModule } from '@angular/platform-browser';
 import { AuthModule } from './layout/auth/auth.module';
@@ -26,7 +25,9 @@ import { CardListComponent } from './modules/dashboard/card-list/card-list.compo
 import { CardTableComponent } from './modules/dashboard/card-table/card-table.component';
 import { CalendarComponent } from './modules/calendar/calendar.component';
 import { EmailComponent } from './modules/email/email.component';
-import { GoogleMapsModule } from '@angular/google-maps'
+import { GoogleMapsModule } from '@angular/google-maps';
+import { LandingPageComponent } from './layout/landing-page/landing-page.component'
+import { LandingPageModule } from './layout/landing/landing-page.module';
 
 @NgModule({
     imports: [
@@ -34,7 +35,7 @@ import { GoogleMapsModule } from '@angular/google-maps'
         BrowserModule,
 
         // 3rd party
-        AuthModule,
+        GoogleMapsModule,
 
         // core & shared
         CoreModule,
@@ -42,7 +43,8 @@ import { GoogleMapsModule } from '@angular/google-maps'
 
         // app
         AppRoutingModule,
-        GoogleMapsModule,
+        AuthModule,
+        LandingPageModule,
 
         BrowserAnimationsModule
     ],
@@ -50,6 +52,7 @@ import { GoogleMapsModule } from '@angular/google-maps'
         AppComponent,
         AuthLayoutComponent,
         AdminLayoutComponent,
+        LandingPageComponent,
         FooterComponent,
         NavbarComponent,
         SidebarComponent,

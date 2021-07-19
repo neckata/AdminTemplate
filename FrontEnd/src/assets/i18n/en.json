@@ -85,6 +85,22 @@
     "error": "Error in sending email",
     "success": "Email was sent successfully"
   },
+  "item": {
+    "headline1": "First Part",
+    "headline2": "Second Part",
+    "headline3": "Third Part",
+    "headline4": "Fourth Part",
+    "description1": "First Part Description",
+    "description2": "Second Part Description",
+    "description3": "Third Part Description",
+    "description4": "Fourth Part Description"
+  },
+  "mainPage": {
+    "name": "Main Page",
+    "description": "Main Page Description",
+    "goToHeader": "Go to Header",
+    "work": "Let's get to work and make your business great."
+  },
   "dashboard": {
     "chart1": {
       "title": "Daily Sales",

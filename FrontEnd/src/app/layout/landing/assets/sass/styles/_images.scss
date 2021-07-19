@@ -1,0 +1,33 @@
+img{
+    max-width: 100%;
+    border-radius: 1px;
+}
+.img-raised{
+    box-shadow: $box-shadow-raised;
+}
+
+.section-images {
+    max-height: 270px;
+    height: 270px;
+
+    .logo-images-container {
+        max-width: 550px;
+        position: absolute;
+        left: 10%;
+        margin-top: -40vh;
+    }
+
+    .logo-images-container-1 {
+        max-width: 350px;
+        position: absolute;
+        right: 20%;
+        margin-top: -25vh;
+    }
+
+    .logo-images-container-2 {
+        max-width: 350px;
+        position: absolute;
+        left: 10%;
+        margin-top: -25vh;
+    }
+}

@@ -1,0 +1,25 @@
+.card {
+    margin-bottom: 15px;
+    min-height: 600px;
+}
+
+.card-img-top {
+    height: 200px;
+    object-fit: cover;
+}
+
+.btn.btn-primary {
+    position: absolute;
+    margin-bottom: 20px;
+    bottom: 0;
+}
+
+.card-text {
+    line-height: 1.40em;
+}
+
+.card:hover {
+    border-radius: 15px;
+    animation-duration: 1s;
+    box-shadow: 0 30px 30px rgba(0,0,0,0.22), 0 30px 30px rgba(0,0,0,0.22);
+}

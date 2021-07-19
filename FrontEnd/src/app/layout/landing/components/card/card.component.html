@@ -1,0 +1,17 @@
+<div class="card" [ngStyle]="{'min-height': (showButton) ? '600px' : '450px'}">
+	<img src="assets/img/{{item.image}}" class="card-img-top">
+	<div class="card-body">
+		<h5 class="card-title title">
+			{{ item.headline | translate }}
+		</h5>
+		<p class="card-text">
+			{{ item.description | translate }}
+		</p>
+		<p class="card-text">
+			{{ 'mainPage.work' | translate }}
+		</p>
+		<a (click)="scroll('header')" style="cursor:pointer;"  class="btn btn-primary" *ngIf="showButton">
+			{{ 'mainPage.goToHeader' | translate }}
+		</a>
+	</div>
+</div>
