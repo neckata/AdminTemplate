@@ -26,6 +26,7 @@ import { CardListComponent } from './modules/dashboard/card-list/card-list.compo
 import { CardTableComponent } from './modules/dashboard/card-table/card-table.component';
 import { CalendarComponent } from './modules/calendar/calendar.component';
 import { EmailComponent } from './modules/email/email.component';
+import { GoogleMapsModule } from '@angular/google-maps'
 
 @NgModule({
     imports: [
@@ -41,11 +42,9 @@ import { EmailComponent } from './modules/email/email.component';
 
         // app
         AppRoutingModule,
+        GoogleMapsModule,
 
-        BrowserAnimationsModule,
-        AgmCoreModule.forRoot({
-            apiKey: 'AIzaSyALlmqcnvJgWug07siV2jV0BNFsHqve1dw'
-        })
+        BrowserAnimationsModule
     ],
     declarations: [
         AppComponent,
