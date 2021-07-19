@@ -6,6 +6,8 @@ import { Component, OnInit } from '@angular/core';
     styleUrls: ['./maps.component.css']
 })
 export class MapsComponent implements OnInit {
+
+    //http://embed.plnkr.co/AVNum8/
     ngOnInit() {
         var myLatlng = new google.maps.LatLng(42.510578, 27.461014);
         var mySecondLatlng = new google.maps.LatLng(42.698334, 23.319941);
