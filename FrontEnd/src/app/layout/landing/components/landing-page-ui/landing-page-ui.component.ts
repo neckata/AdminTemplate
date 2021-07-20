@@ -22,7 +22,6 @@ export class LandingPageUIComponent implements OnInit, OnDestroy {
     public firstParts: Item[] = [];
     public secondParts: Item[] = [];
     public thirdParts: Item[] = [];
-    public fourthParts: Item[] = [];
 
     constructor(config: NgbAccordionConfig) {
         config.closeOthers = true;
@@ -39,7 +38,6 @@ export class LandingPageUIComponent implements OnInit, OnDestroy {
             this.firstParts.push(new Item("item.headline1", "item.description1", "logo.png"));
             this.secondParts.push(new Item("item.headline2", "item.description2", "logo.png"));
             this.thirdParts.push(new Item("item.headline3", "item.description3", "logo.png"));
-            this.fourthParts.push(new Item("item.headline4", "item.description4", "logo.png"));
         }
     }
 
