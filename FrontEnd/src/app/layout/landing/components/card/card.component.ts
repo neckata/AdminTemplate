@@ -2,19 +2,19 @@ import { Component, Input } from '@angular/core';
 import { Item } from '../../models/item.model';
 
 @Component({
-  selector: 'app-card',
-  templateUrl: './card.component.html',
-  styleUrls: ['./card.component.css']
+    selector: 'app-card',
+    templateUrl: './card.component.html',
+    styleUrls: ['./card.component.css', '../../assets/sass/styles.scss']
 })
 export class CardComponent {
 
-  @Input() item: Item;
-  @Input() showButton: boolean;
+    @Input() item: Item;
+    @Input() showButton: boolean;
 
-  constructor() { }
+    constructor() { }
 
-  scroll(el: string) {
-    const element = document.getElementById(el);
-    element.scrollIntoView({ behavior: 'smooth' });
-  }
+    scroll(el: string) {
+        const element = document.getElementById(el);
+        element.scrollIntoView({ behavior: 'smooth' });
+    }
 }

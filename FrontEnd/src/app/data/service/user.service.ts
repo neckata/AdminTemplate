@@ -1,5 +1,7 @@
 import { Injectable, isDevMode } from '@angular/core';
+import { Router } from '@angular/router';
 import { Observable, of } from 'rxjs';
+import { CacheService } from '../../core/services/cache.service';
 import { HttpClientService } from '../../core/services/http-client.service';
 import { LoginUser, RegisterUser, LoggedUser, UserFullInfo, UserInfo } from '../schema/user';
 import { JsonApiService } from './json-api.service';
@@ -8,7 +10,7 @@ import { JsonApiService } from './json-api.service';
     providedIn: 'root'
 })
 export class UserService {
-    constructor(private jsonApiService: JsonApiService, private http: HttpClientService) {
+    constructor(private jsonApiService: JsonApiService, private http: HttpClientService, private _cacheService: CacheService, private router: Router) {
     }
 
     public getUsers(): Observable<UserInfo[]> {
@@ -41,6 +43,11 @@ export class UserService {
         else {
             return this.jsonApiService.get("/login", userName, password);
         }
+    }
+
+    public logout() {
+        this._cacheService.remove('user');
+        this.router.navigate(['/landing'])
     }
 
     public register(user: RegisterUser): Observable<RegisterUser> {

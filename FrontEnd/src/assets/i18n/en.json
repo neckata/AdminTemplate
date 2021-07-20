@@ -1,6 +1,13 @@
 {
   "navigation": {
-    "title": "Template"
+    "title": "Template",
+    "contacts": "Contacts",
+    "aboutUs": "About us",
+    "contactUs": "Contact Us",
+    "enter": "Enter",
+    "firstPart": "First Part",
+    "secondPart": "Second Part",
+    "thirdPart": "Third Part"
   },
   "messages": {
     "SuccessRegister": "User registers successfully!",
@@ -33,7 +40,9 @@
     "action4": "Another Notification",
     "action5": "Another One",
     "account": "Account",
-    "search": "Search..."
+    "search": "Search...",
+    "profile": "Profile",
+    "logout": "Logout"
   },
   "layout": {
     "sidebar": "Sidebar Filters",

@@ -1,12 +1,11 @@
-import { Component, OnInit, OnDestroy, ViewEncapsulation } from '@angular/core';
+import { Component, OnInit, OnDestroy } from '@angular/core';
 import { NgbAccordionConfig } from '@ng-bootstrap/ng-bootstrap';
 import { Item } from '../../models/item.model';
 
 @Component({
     selector: 'landing-page-ui',
     templateUrl: './landing-page-ui.component.html',
-    styleUrls: ['./landing-page-ui.component.scss', '../../assets/sass/styles.scss'],
-    encapsulation: ViewEncapsulation.None
+    styleUrls: ['./landing-page-ui.component.scss', '../../assets/sass/styles.scss']
 
 })
 export class LandingPageUIComponent implements OnInit, OnDestroy {
