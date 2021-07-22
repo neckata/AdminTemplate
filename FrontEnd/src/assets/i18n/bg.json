@@ -85,6 +85,13 @@
   "calendar": {
     "title": "Google Default Calendar"
   },
+  "maps": {
+    "title": "Maps",
+    "from": "From",
+    "destination": "Destination",
+    "nearMe": "Near Me",
+    "search": "Search"
+  },
   "email": {
     "title": "Email",
     "name": "Name",

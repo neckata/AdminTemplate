@@ -69,6 +69,7 @@ label{
     position: relative;
     z-index: 2;
     width: 100%;
-    height: calc(100vh - 70px);
+    height: calc(100vh - 300px);
+    min-height: 300px;
     margin-top: 70px;
 }

@@ -1,1 +1,19 @@
-<div id="map"></div>
+<div class="container-fluid">
+	<div id="map"></div>
+
+	<div class="card">
+		<div class="card-header card-header-info">
+			<h4 class="card-title">{{'maps.title' | translate}}</h4>
+		</div>
+		<div class="card-body">
+			<form [formGroup]="mapForm" (ngSubmit)="searchDestination()">
+				<form-control name="from" [group]="mapForm" [formType]="formTypes.Text" placeholder="maps.from"></form-control>
+				<form-control name="destination" [group]="mapForm" [formType]="formTypes.Text" placeholder="maps.destination"></form-control>
+				<button mat-raised-button type="submit" class="btn btn-info pull-right" [disabled]="!mapForm.valid">{{'maps.search' | translate}}</button>
+			</form>
+
+			<button mat-raised-button class="btn btn-info pull-right" (click)="findNearMe()">{{'maps.nearMe' | translate}}</button>
+		</div>
+	</div>
+</div>
+
