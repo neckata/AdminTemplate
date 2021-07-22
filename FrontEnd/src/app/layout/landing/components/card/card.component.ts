@@ -4,7 +4,7 @@ import { Item } from '../../models/item.model';
 @Component({
     selector: 'app-card',
     templateUrl: './card.component.html',
-    styleUrls: ['./card.component.css', '../../assets/sass/styles.scss']
+    styleUrls: ['./card.component.css']
 })
 export class CardComponent {
 

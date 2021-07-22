@@ -4,7 +4,7 @@ import { Location } from '@angular/common';
 @Component({
     selector: 'landing-navbar',
     templateUrl: './navbar.component.html',
-    styleUrls: ['./navbar.component.scss', '../../assets/sass/styles.scss']
+    styleUrls: ['./navbar.component.scss']
 })
 export class NavbarLandingComponent implements OnInit {
     private toggleButton: any;

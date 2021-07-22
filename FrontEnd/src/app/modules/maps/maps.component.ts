@@ -46,7 +46,6 @@ export class MapsComponent implements OnInit {
 
         directionsService.route(request, function (response, status) {
             if (status === google.maps.DirectionsStatus.OK) {
-
                 new google.maps.DirectionsRenderer({
                     map: map,
                     directions: response,

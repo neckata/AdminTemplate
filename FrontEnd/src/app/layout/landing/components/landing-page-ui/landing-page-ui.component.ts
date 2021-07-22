@@ -5,8 +5,7 @@ import { Item } from '../../models/item.model';
 @Component({
     selector: 'landing-page-ui',
     templateUrl: './landing-page-ui.component.html',
-    styleUrls: ['./landing-page-ui.component.scss', '../../assets/sass/styles.scss']
-
+    styleUrls: ['./landing-page-ui.component.scss']
 })
 export class LandingPageUIComponent implements OnInit, OnDestroy {
     public focus: boolean;
