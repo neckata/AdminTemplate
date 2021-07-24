@@ -10,24 +10,45 @@ import { FormType } from '../../enums/form-types.enum';
 export class FormControlComponent implements OnInit {
     @Input() group: FormGroup;
     @Input() name: string;
+    @Input() startName: string;
+    @Input() endName: string;
     @Input() formType: FormType;
     @Input() placeholder: string;
+    @Input() placeholderStartRange: string;
+    @Input() placeholderEndRange: string;
     @Input() isDisabled: boolean;
-
+    @Input() options: string[];
     control: AbstractControl;
     formTypes = FormType;
 
     ngOnInit(): void {
-        this.control = this.group.controls[this.name];
-        if (this.isDisabled)
-            this.group.get(this.name).disable();
+        if (this.formType == FormType.DateRange) {
+            //TODO
+        }
+        else {
+            this.control = this.group.controls[this.name];
+            if (this.isDisabled)
+                this.group.get(this.name).disable();
+        }
     }
 
     hasErrors(): boolean {
-        return this.group.get(this.name).status === 'INVALID';
+        if (this.formType == FormType.DateRange) {
+            //TODO + html after check
+            return false;
+        }
+        else {
+            return this.group.get(this.name).status === 'INVALID';
+        }
     }
 
     getErrors(): ValidationErrors {
-        return this.group.get(this.name).errors;
+        if (this.formType == FormType.DateRange) {
+              //TODO + html after check
+            return null;
+        }
+        else {
+            return this.group.get(this.name).errors;
+        }
     }
 }

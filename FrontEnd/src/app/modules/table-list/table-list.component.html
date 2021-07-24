@@ -58,14 +58,36 @@
 			<div class="col-md-12">
 				<div class="card card-plain">
 					<div class="card-header card-header-danger">
-						<h4 class="card-title mt-0"> {{'tables.header2' | translate }}</h4>
+						<h4 class="card-title mt-0"> {{'tables.header3' | translate }}</h4>
 						<p class="card-category">{{'tables.desc' | translate }}</p>
 					</div>
 					<div class="card-body">
+
+						<form [formGroup]="filterGroup" (ngSubmit)="filterData()">
+							<div class="row">
+								<div class="col-md-4">
+									<form-control name="country" [group]="filterGroup" [formType]="formTypes.MultiSelect" placeholder="tables.country" [options]="countries"></form-control>
+								</div>
+								<div class="col-md-4">
+									<form-control name="city" [group]="filterGroup" [formType]="formTypes.DropDown" placeholder="tables.city" [options]="countries"></form-control>
+								</div>
+								<div class="col-md-2">
+									<form-control startName="startDate" endName="endDate" [group]="filterGroup" [formType]="formTypes.DateRange"
+												  placeholder="tables.dateRange"
+												  placeholderStartRange="tables.startDate"
+												  placeholderEndRange="tables.endDate"></form-control>
+								</div>
+								<div class="col-md-2">
+									<button mat-raised-button type="submit" class="btn btn-info pull-right" [disabled]="!filterGroup.valid">{{'tables.filter' | translate}}</button>
+								</div>
+							</div>
+						</form>
+
 						<mat-form-field>
 							<mat-label>{{'tables.header2' | translate }}</mat-label>
-							<input matInput (keyup)="applyFilter($event)" placeholder="Ex. Mia" #input>
+							<input matInput (keyup)="applyFilter($event)" placeholder="Ex. Doris" #input>
 						</mat-form-field>
+
 						<div class="table-responsive">
 							<table [hidden]="dataSource == null" mat-table [dataSource]="dataSource" matSort>
 								<ng-container *ngFor="let col of displayColumns" [matColumnDef]="col.field">

@@ -10,6 +10,27 @@
 
 		<textarea *ngIf="formType == formTypes.TextArea" matInput [placeholder]="placeholder | translate" [formControlName]="name"></textarea>
 
+		<mat-label *ngIf="formType == formTypes.MultiSelect || formType == formTypes.DropDown || formType == formTypes.DateRange">{{placeholder | translate}}</mat-label>
+
+		<mat-select [formControlName]="name" multiple *ngIf="formType == formTypes.MultiSelect">
+			<mat-option *ngFor="let option of options" [value]="option">{{option}}</mat-option>
+		</mat-select>
+
+		<mat-select [formControlName]="name" *ngIf="formType == formTypes.DropDown">
+			<mat-option *ngFor="let option of options" [value]="option">{{option}}</mat-option>
+		</mat-select>
+
+		<mat-date-range-input *ngIf="formType == formTypes.DateRange" [rangePicker]="dateRangePicker">
+			<input matStartDate [placeholder]="placeholderStartRange | translate" [formControlName]="startName">
+			<input matEndDate [placeholder]="placeholderEndRange | translate" [formControlName]="endName">
+		</mat-date-range-input>
+		<mat-datepicker-toggle *ngIf="formType == formTypes.DateRange" matSuffix [for]="dateRangePicker"></mat-datepicker-toggle>
+		<mat-date-range-picker #dateRangePicker></mat-date-range-picker>
+
+		<input matInput [matDatepicker]="datePicker" *ngIf="formType == formTypes.Date" [formControlName]="name">
+		<mat-datepicker-toggle matSuffix [for]="datePicker" *ngIf="formType == formTypes.Date"></mat-datepicker-toggle>
+		<mat-datepicker #datePicker></mat-datepicker>
+
 		<mat-error *ngIf="hasErrors()">
 			<validation-errors [control]="control" [labelName]="placeholder | translate"></validation-errors>
 		</mat-error>

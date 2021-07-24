@@ -61,9 +61,15 @@
   "tables": {
     "header1": "Simple Table",
     "header2": "Table on Plain Background",
+    "header3": "Table with filers, sort, order, pagination",
     "desc": "Here is a subtitle for this table",
     "noData": "No data matching the filter",
-    "filter": "Filter"
+    "filter": "Filter",
+    "country": "Country",
+    "city": "City",
+    "startDate": "Start Date",
+    "dateRange": "Date Range",
+    "endDate": "End Date"
   },
   "user": {
     "edit": "Edit Profile",

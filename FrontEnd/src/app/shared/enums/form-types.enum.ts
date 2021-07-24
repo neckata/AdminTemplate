@@ -2,7 +2,11 @@ enum FormType {
     Text,
     TextArea,
     Password,
-    File
+    File,
+    MultiSelect,
+    DropDown,
+    Date,
+    DateRange
 }
 
 export { FormType };
