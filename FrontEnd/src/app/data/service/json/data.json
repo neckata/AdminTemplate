@@ -5,35 +5,40 @@
       "name": "Dakota Rice",
       "country": "Niger",
       "city": "Oud-Turnhout",
-      "salary": "$36,738"
+      "salary": "$36,738",
+      "date": "2021-03-19"
     },
     {
       "id": 2,
       "name": "Minerva Hooper",
       "country": "Curaçao",
       "city": "Sinaai-Waas",
-      "salary": "$16,738"
+      "salary": "$16,738",
+      "date": "2021-06-17"
     },
     {
       "id": 3,
       "name": "Sage Rodriguez",
       "country": "Netherlands",
       "city": "Baileux",
-      "salary": "$26,738"
+      "salary": "$26,738",
+      "date": "2021-05-29"
     },
     {
       "id": 4,
       "name": "Philip Chaney",
       "country": "Korea, South",
       "city": "Overland Park",
-      "salary": "$56,738"
+      "salary": "$56,738",
+      "date": "2021-04-19"
     },
     {
       "id": 5,
       "name": "Doris Greene",
       "country": "Malawi",
       "city": "Feldkirchen in Kärnten",
-      "salary": "$46,738"
+      "salary": "$46,738",
+      "date": "2021-08-21"
     }
   ],
   "usersFullInfo": [

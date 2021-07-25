@@ -1,38 +1,49 @@
 <div [formGroup]="group">
 
+	<!--Fiel Field-->
 	<input *ngIf="formType == formTypes.File" [placeholder]="placeholder | translate" [formControlName]="name" type="file">
 
 	<mat-form-field *ngIf="formType != formTypes.File">
 
+		<!--Text Field-->
 		<input *ngIf="formType == formTypes.Text" matInput [placeholder]="placeholder | translate" [formControlName]="name" type="text">
 
+		<!--Password Field-->
 		<input *ngIf="formType == formTypes.Password" matInput [placeholder]="placeholder | translate" [formControlName]="name" type="password">
 
+		<!--Text Area-->
 		<textarea *ngIf="formType == formTypes.TextArea" matInput [placeholder]="placeholder | translate" [formControlName]="name"></textarea>
 
+		<!--Label if doesnt have placeholder-->
+		<!--There is a bug with DateRange -> Logs an error in console, but nothing is broken-->
 		<mat-label *ngIf="formType == formTypes.MultiSelect || formType == formTypes.DropDown || formType == formTypes.DateRange">{{placeholder | translate}}</mat-label>
 
+		<!--Multi Select-->
 		<mat-select [formControlName]="name" multiple *ngIf="formType == formTypes.MultiSelect">
 			<mat-option *ngFor="let option of options" [value]="option">{{option}}</mat-option>
 		</mat-select>
 
+		<!--Dropdown-->
 		<mat-select [formControlName]="name" *ngIf="formType == formTypes.DropDown">
 			<mat-option *ngFor="let option of options" [value]="option">{{option}}</mat-option>
 		</mat-select>
 
-		<mat-date-range-input *ngIf="formType == formTypes.DateRange" [rangePicker]="dateRangePicker">
+		<!--Date Range-->
+		<mat-date-range-input *ngIf="formType == formTypes.DateRange" [rangePicker]="dateRangePicker" [disabled]="isDisabled">
 			<input matStartDate [placeholder]="placeholderStartRange | translate" [formControlName]="startName">
 			<input matEndDate [placeholder]="placeholderEndRange | translate" [formControlName]="endName">
 		</mat-date-range-input>
 		<mat-datepicker-toggle *ngIf="formType == formTypes.DateRange" matSuffix [for]="dateRangePicker"></mat-datepicker-toggle>
 		<mat-date-range-picker #dateRangePicker></mat-date-range-picker>
 
+		<!--Date-->
 		<input matInput [matDatepicker]="datePicker" *ngIf="formType == formTypes.Date" [formControlName]="name">
 		<mat-datepicker-toggle matSuffix [for]="datePicker" *ngIf="formType == formTypes.Date"></mat-datepicker-toggle>
 		<mat-datepicker #datePicker></mat-datepicker>
 
+		<!--Errors-->
 		<mat-error *ngIf="hasErrors()">
-			<validation-errors [control]="control" [labelName]="placeholder | translate"></validation-errors>
+			<validation-errors [control]="control" [labelName]="placeholder | translate" [controlStart]="controlStart" [controlEnd]="controlEnd"></validation-errors>
 		</mat-error>
 	</mat-form-field>
 </div>

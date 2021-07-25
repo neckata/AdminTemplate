@@ -14,7 +14,7 @@ import { FormType } from '../../shared/enums/form-types.enum';
     styleUrls: ['./table-list.component.css']
 })
 export class TableListComponent implements AfterViewInit {
-    displayColumns: Colum[] = [new Colum("ID"), new Colum("Name"), new Colum("Country"), new Colum("City"), new Colum("Salary")];
+    displayColumns: Colum[] = [new Colum("ID"), new Colum("Name"), new Colum("Country"), new Colum("City"), new Colum("Salary"), new Colum("Date")];
 
     data: UserInfo[] = [];
     dataSource: MatTableDataSource<UserInfo>;
@@ -26,7 +26,8 @@ export class TableListComponent implements AfterViewInit {
         country: new FormControl('', [Validators.required]),
         city: new FormControl('', [Validators.required]),
         startDate: new FormControl('', [Validators.required]),
-        endDate: new FormControl('', [Validators.required])
+        endDate: new FormControl('', [Validators.required]),
+        filter: new FormControl()
     });
 
     countries: string[] = [];
@@ -47,20 +48,24 @@ export class TableListComponent implements AfterViewInit {
     ngAfterViewInit() {
         this.dataSource.paginator = this.paginator;
         this.dataSource.sort = this.sort;
-    }
 
-    applyFilter(event: Event) {
-        const filterValue = (event.target as HTMLInputElement).value;
-        this.dataSource.filter = filterValue.trim().toLowerCase();
+        this.filterGroup.get("filter").valueChanges.subscribe(filterValue => {
+            this.dataSource.filter = filterValue.trim().toLowerCase();
 
-        if (this.dataSource.paginator) {
-            this.dataSource.paginator.firstPage();
-        }
+            if (this.dataSource.paginator) {
+                this.dataSource.paginator.firstPage();
+            }
+        });
     }
 
     filterData() {
-        //TODO
-        this.dataSource = new MatTableDataSource(this.data.filter(x => x.country == this.filterGroup.get("country").value));
+        var filteredData = this.data.filter(x =>
+            (this.filterGroup.get("country").value as string[]).indexOf(x.country) !== -1 &&
+            x.city == this.filterGroup.get("city").value &&
+            new Date(x.date) >= this.filterGroup.get("startDate").value &&
+            new Date(x.date) <= this.filterGroup.get("endDate").value)
+
+        this.dataSource = new MatTableDataSource(filteredData);
 
         if (this.dataSource.paginator) {
             this.dataSource.paginator.firstPage();

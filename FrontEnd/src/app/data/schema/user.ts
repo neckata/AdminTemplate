@@ -31,6 +31,7 @@ export class UserInfo {
     country: string;
     city: string;
     salary: string;
+    date: Date;
 }
 
 export class UserFullInfo {
