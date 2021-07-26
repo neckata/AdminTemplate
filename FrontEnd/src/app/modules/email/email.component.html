@@ -9,7 +9,6 @@
 					<form-control name="name" [group]="emailForm" [formType]="formTypes.Text" placeholder="email.name"></form-control>
 					<form-control name="email" [group]="emailForm" [formType]="formTypes.Text" placeholder="email.email"></form-control>
 					<form-control name="message" [group]="emailForm" [formType]="formTypes.TextArea" placeholder="email.message"></form-control>
-					<form-control name="upload" [group]="emailForm" [formType]="formTypes.File" placeholder="email.file"></form-control>
 					<button mat-raised-button type="submit" class="btn btn-info pull-right" [disabled]="!emailForm.valid">{{'email.send' | translate}}</button>
 				</form>
 			</div>
