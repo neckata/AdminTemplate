@@ -29,24 +29,24 @@ export class DashboardComponent implements AfterViewInit {
         this.stats.push(new CardStats("dashboard.stats1.title", "dashboard.stats1.category", "dashboard.stats1.footer", "warning", "content_copy", "card-header-warning"));
         this.stats.push(new CardStats("dashboard.stats2.title", "dashboard.stats2.category", "dashboard.stats2.footer", "date_range", "store", "card-header-success"));
         this.stats.push(new CardStats("dashboard.stats3.title", "dashboard.stats3.category", "dashboard.stats3.footer", "local_offer", "info_outline", "card-header-danger"));
-        this.stats.push(new CardStats("dashboard.stats4.title", "dashboard.stats4.category", "dashboard.stats4.footer", "update", null, "card-header-info", "fa-twitter"));
+        this.stats.push(new CardStats("dashboard.stats4.title", "dashboard.stats4.category", "dashboard.stats4.footer", "update", null, "card-header-info", "fa-users"));
 
         userService.getUsers().subscribe((data: UserInfo[]) => {
-            var displayColumns: Colum[] = [new Colum("ID"), new Colum("Name"), new Colum("Salary"), new Colum("Country")];
+            var displayColumns: Colum[] = [new Colum("ID"), new Colum("Name"), new Colum("Country"), new Colum("City"), new Colum("Salary"), new Colum("Date")];
             this.tables.push(new CardTable("dashboard.table1.title", "dashboard.table1.category", displayColumns, data, "card-header-warning", "text-warning"));
         });
 
         var tabs: CardListTab[] = [];
-        tabs.push(new CardListTab("dashboard.list1.tab1.header", "bug_report", "#profile"));
-        tabs.push(new CardListTab("dashboard.list1.tab2.header", "code", "#messages"));
+        tabs.push(new CardListTab("dashboard.list1.tab1.header", "people", "#users"));
+        tabs.push(new CardListTab("dashboard.list1.tab2.header", "task", "#jobs"));
         tabs.push(new CardListTab("dashboard.list1.tab3.header", "cloud", "#settings"));
 
         var content: CardListContent[] = [];
-        dashbaordService.getBugs().subscribe((data: CardListContentLine[]) => {
-            content.push(new CardListContent("profile", data));
+        dashbaordService.getUsers().subscribe((data: CardListContentLine[]) => {
+            content.push(new CardListContent("users", data));
         });
-        dashbaordService.getWebsite().subscribe((data: CardListContentLine[]) => {
-            content.push(new CardListContent("messages", data));
+        dashbaordService.getTasks().subscribe((data: CardListContentLine[]) => {
+            content.push(new CardListContent("jobs", data));
         });
         dashbaordService.getServer().subscribe((data: CardListContentLine[]) => {
             content.push(new CardListContent("settings", data));

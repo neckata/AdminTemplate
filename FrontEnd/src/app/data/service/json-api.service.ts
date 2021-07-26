@@ -55,10 +55,10 @@ export class JsonApiService {
                     return of(user);
 
                 }
-            case '/dashboard/bugs':
-                return of(data.dashboard.list.bugs);
-            case '/dashboard/website':
-                return of(data.dashboard.list.website);
+            case '/dashboard/users':
+                return of(data.dashboard.list.users);
+            case '/dashboard/tasks':
+                return of(data.dashboard.list.tasks);
             case '/dashboard/server':
                 return of(data.dashboard.list.server);
             default:

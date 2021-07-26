@@ -10,12 +10,12 @@ export class DashboardService {
     constructor(private jsonApiService: JsonApiService) {
     }
 
-    public getBugs(): Observable<CardListContentLine[]> {
-        return this.jsonApiService.get("/dashboard/bugs");
+    public getUsers(): Observable<CardListContentLine[]> {
+        return this.jsonApiService.get("/dashboard/users");
     }
 
-    public getWebsite(): Observable<CardListContentLine[]> {
-        return this.jsonApiService.get("/dashboard/website");
+    public getTasks(): Observable<CardListContentLine[]> {
+        return this.jsonApiService.get("/dashboard/tasks");
     }
 
     public getServer(): Observable<CardListContentLine[]> {

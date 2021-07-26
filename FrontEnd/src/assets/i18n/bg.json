@@ -141,36 +141,36 @@
       "footer": "campaign sent 2 days ago"
     },
     "stats1": {
-      "title": "49/50 GB",
-      "category": "Used Space",
-      "footer": "Get More Space..."
+      "title": "49/52",
+      "category": "Completed Tasks",
+      "footer": "Last Month"
     },
     "stats2": {
       "title": "$34,245",
       "category": "Revenue",
-      "footer": "Last 24 Hours"
+      "footer": "Last 6 months"
     },
     "stats3": {
-      "title": "75",
-      "category": "Fixed Issues",
-      "footer": "Tracked from Github"
+      "title": "5",
+      "category": "Issues",
+      "footer": "Last Hour"
     },
     "stats4": {
       "title": "+245",
-      "category": "Followers",
+      "category": "Users",
       "footer": "Just Updated"
     },
     "table1": {
-      "title": "Employees Stats",
-      "category": "New employees on 15th September, 2016"
+      "title": "New Users",
+      "category": "New Users on 15th September, 2016"
     },
     "list1": {
       "header": "Tasks",
       "tab1": {
-        "header": "Bugs"
+        "header": "Users"
       },
       "tab2": {
-        "header": "Website"
+        "header": "Jobs"
       },
       "tab3": {
         "header": "Server"

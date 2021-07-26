@@ -58,38 +58,38 @@
   ],
   "dashboard": {
     "list": {
-      "bugs": [
+      "users": [
         {
           "id": 1,
           "checked": true,
-          "text": "Sign contract for 'What are conference organizers afraid of?'"
+          "text": "Dakota Rice"
         },
         {
           "id": 2,
           "checked": false,
-          "text": "Lines From Great Russian Literature? Or E-mails From My Boss?"
+          "text": "Minerva Hooper"
         },
         {
           "id": 3,
           "checked": false,
-          "text": "Flooded: One year later, assessing what was lost and what was found when a ravaging rain swept through metro Detroit"
+          "text": "Sage Rordiguez"
         },
         {
           "id": 4,
           "checked": true,
-          "text": "Create 4 Invisible User Experiences you Never Knew About"
+          "text": "Doris Greene"
         }
       ],
-      "website": [
+      "tasks": [
         {
           "id": 5,
           "checked": true,
-          "text": "Flooded: One year later, assessing what was lost and what was found when a ravaging rain swept through metro Detroit"
+          "text": "Drive a car from London to Berlin"
         },
         {
           "id": 6,
           "checked": false,
-          "text": "Sign contract for 'What are conference organizers afraid of?'"
+          "text": "Drive a bus from Manchester to Leeds"
         }
       ],
       "server": [
