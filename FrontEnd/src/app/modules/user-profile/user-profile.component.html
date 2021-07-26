@@ -50,6 +50,16 @@
 									<form-control name="info" [group]="profileForm" [formType]="formTypes.TextArea" placeholder="user.info"></form-control>
 								</div>
 							</div>
+
+							<div class="row">
+								<div class="col-md-12">
+									<h4 style="text-align: center">{{'user.changeImage' | translate}}</h4>
+									<div class="uploadfilecontainer" (click)="fileInput.click()">
+										<input hidden type="file" #fileInput (change)="onFileChange($event)">
+									</div>
+								</div>
+							</div>
+
 							<button mat-raised-button type="submit" class="btn btn-danger pull-right" [disabled]="!profileForm.valid">{{'user.updateProfile' | translate}}</button>
 							<div class="clearfix"></div>
 						</form>
@@ -60,7 +70,7 @@
 				<div class="card card-profile">
 					<div class="card-avatar">
 						<a href="javascript:void(0)">
-							<img class="img" src="./assets/img/faces/user.png" />
+							<img class="img" [src]="logo" style="height:130px; width:130px;"/>
 						</a>
 					</div>
 					<div class="card-body">

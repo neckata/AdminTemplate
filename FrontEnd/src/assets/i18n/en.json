@@ -86,7 +86,8 @@
     "info": "Info about me",
     "aboutMe": "About me",
     "updateProfile": "Update Profile",
-    "role": "Role"
+    "role": "Role",
+    "changeImage": "Change Image"
   },
   "calendar": {
     "title": "Google Default Calendar"

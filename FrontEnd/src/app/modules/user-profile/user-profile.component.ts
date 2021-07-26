@@ -23,17 +23,21 @@ export class UserProfileComponent implements OnInit {
         city: new FormControl('', [Validators.required, Validators.minLength(3), Validators.maxLength(30)]),
         country: new FormControl('', [Validators.required, Validators.minLength(3), Validators.maxLength(30)]),
         code: new FormControl('', [Validators.required, Validators.minLength(3), Validators.maxLength(10)]),
-        info: new FormControl('', [Validators.required, Validators.minLength(3), Validators.maxLength(150)]),
+        info: new FormControl('', [Validators.required, Validators.minLength(3), Validators.maxLength(150)])
     });
 
     formTypes = FormType;
     roleTypes = Role;
+    image: string;
+    fileToUpload: File;
 
     constructor(public userService: UserService, public authService: AuthService) {
     }
 
     ngOnInit(): void {
         this.userService.getUser(this.authService.currentUser.user.id).subscribe(user => {
+            //TODO image from backend
+            this.image = "./assets/img/faces/user.png";
             this.profileForm.patchValue({
                 role: this.authService.currentUser.user.roles[0],
                 userName: this.authService.currentUser.user.userName,
@@ -57,6 +61,25 @@ export class UserProfileComponent implements OnInit {
             updateUser[key] = this.profileForm.controls[key].value;
         });
 
+        //TODO better way for uploading image
+        var formData = new FormData();
+        formData.append('file', this.fileToUpload, this.fileToUpload.name);
+        this.userService.uploadImage(formData).subscribe();
+
         this.userService.updateUser(updateUser).subscribe();
+    }
+  
+    onFileChange(fileInput: any) {
+        this.image = fileInput.target.files[0];
+
+        this.fileToUpload = <File>fileInput.target.files[0];
+      
+        let reader = new FileReader();
+
+        reader.onload = (e: any) => {
+            this.image = e.target.result;
+        }
+
+        reader.readAsDataURL(fileInput.target.files[0]);
     }
 }

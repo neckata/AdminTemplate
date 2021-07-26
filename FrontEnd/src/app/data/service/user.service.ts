@@ -32,6 +32,12 @@ export class UserService {
         }
     }
 
+    public uploadImage(formData: FormData){
+        if (isDevMode()) {
+            return this.http.post({ url: 'users/upload', body: formData, snackBarMessage: "SuccessUpdateImage" })
+        }
+    }
+
     public login(userName: string, password: string): Observable<LoggedUser> {
         if (isDevMode()) {
             var user = new LoginUser();
