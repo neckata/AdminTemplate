@@ -1,22 +1,40 @@
 <div [formGroup]="group">
-	<mat-form-field>
+	<!--Slider-->
+	<mat-slide-toggle *ngIf="formType == formTypes.Slider" matInput [formControlName]="name">
+		{{placeholder | translate}}
+	</mat-slide-toggle>
+
+	<mat-form-field *ngIf="formType != formTypes.Slider">
 
 		<!--Text Field-->
-		<input *ngIf="formType == formTypes.Text" matInput [placeholder]="placeholder | translate" [formControlName]="name" type="text">
+		<input *ngIf="formType == formTypes.Text" matInput [placeholder]="placeholder | translate"
+			   [formControlName]="name" type="text">
+
+		<!--Number Field-->
+		<input *ngIf="formType == formTypes.Number" matInput [placeholder]="placeholder | translate"
+			   [formControlName]="name" type="number">
 
 		<!--Password Field-->
-		<input *ngIf="formType == formTypes.Password" matInput [placeholder]="placeholder | translate" [formControlName]="name" type="password">
+		<input *ngIf="formType == formTypes.Password" matInput [placeholder]="placeholder | translate"
+			   [formControlName]="name" type="password">
 
 		<!--Text Area-->
-		<textarea *ngIf="formType == formTypes.TextArea" matInput [placeholder]="placeholder | translate" [formControlName]="name"></textarea>
+		<textarea *ngIf="formType == formTypes.TextArea" matInput [placeholder]="placeholder | translate"
+				  [formControlName]="name"></textarea>
 
 		<!--Label if doesnt have placeholder-->
 		<!--There is a bug with DateRange -> Logs an error in console, but nothing is broken-->
-		<mat-label *ngIf="formType == formTypes.MultiSelect || formType == formTypes.DropDown || formType == formTypes.DateRange">{{placeholder | translate}}</mat-label>
+		<mat-label *ngIf="formType == formTypes.MultiSelect
+				   || formType == formTypes.DropDown
+				   || formType == formTypes.DropDownWithComplexOptions
+				   || formType == formTypes.DateRange
+				   || formType == formTypes.Date">
+			{{placeholder | translate}}
+		</mat-label>
 
 		<!--Multi Select-->
 		<mat-select [formControlName]="name" multiple *ngIf="formType == formTypes.MultiSelect">
-			<mat-option *ngFor="let option of options" [value]="option">{{option}}</mat-option>
+			<mat-option *ngFor="let option of complexOptions" [value]="option.value">{{option.text}}</mat-option>
 		</mat-select>
 
 		<!--Dropdown-->
@@ -24,12 +42,28 @@
 			<mat-option *ngFor="let option of options" [value]="option">{{option}}</mat-option>
 		</mat-select>
 
+		<!--Dropdown Complex Options-->
+		<mat-select [formControlName]="name" *ngIf="formType == formTypes.DropDownWithComplexOptions">
+			<mat-option *ngFor="let option of complexOptions" [value]="option.value">{{option.text}}</mat-option>
+		</mat-select>
+
+		<!--AutoComplete-->
+		<input type="text" [placeholder]="placeholder | translate" matInput [formControlName]="name" *ngIf="collectionData != null"
+			   [matAutocomplete]="autoStart">
+		<mat-autocomplete #autoStart="matAutocomplete" [displayWith]="displayFnCollection">
+			<mat-option *ngFor="let option of collectionData | async" [value]="option">
+				{{option.text}}
+			</mat-option>
+		</mat-autocomplete>
+
 		<!--Date Range-->
-		<mat-date-range-input *ngIf="formType == formTypes.DateRange" [rangePicker]="dateRangePicker" [disabled]="isDisabled">
+		<mat-date-range-input *ngIf="formType == formTypes.DateRange" [rangePicker]="dateRangePicker"
+							  [disabled]="isDisabled">
 			<input matStartDate [placeholder]="placeholderStartRange | translate" [formControlName]="startName">
 			<input matEndDate [placeholder]="placeholderEndRange | translate" [formControlName]="endName">
 		</mat-date-range-input>
-		<mat-datepicker-toggle *ngIf="formType == formTypes.DateRange" matSuffix [for]="dateRangePicker"></mat-datepicker-toggle>
+		<mat-datepicker-toggle *ngIf="formType == formTypes.DateRange" matSuffix [for]="dateRangePicker">
+		</mat-datepicker-toggle>
 		<mat-date-range-picker #dateRangePicker></mat-date-range-picker>
 
 		<!--Date-->
@@ -39,7 +73,8 @@
 
 		<!--Errors-->
 		<mat-error *ngIf="hasErrors()">
-			<validation-errors [control]="control" [labelName]="placeholder | translate" [controlStart]="controlStart" [controlEnd]="controlEnd"></validation-errors>
+			<validation-errors [control]="control" [labelName]="placeholder | translate" [controlStart]="controlStart"
+							   [controlEnd]="controlEnd"></validation-errors>
 		</mat-error>
 	</mat-form-field>
 </div>

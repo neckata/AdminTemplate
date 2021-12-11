@@ -1,11 +1,12 @@
 import { Injectable } from '@angular/core'
-import { HttpClient, HttpHeaders } from '@angular/common/http'
+import { HttpClient, HttpHeaders, HttpParams } from '@angular/common/http'
 import { CacheService } from './cache.service'
 import { Observable, of } from 'rxjs'
 import { switchMap, catchError } from 'rxjs/operators'
 import { MatSnackBar } from '@angular/material/snack-bar'
 import { TranslateService } from '@ngx-translate/core'
 import { LoggedUser } from '../../data/schema/user'
+import { environment } from '../../../environments/environment'
 
 export enum Verbs {
     GET = 'GET',
@@ -26,7 +27,13 @@ export class HttpClientService {
         'Authorization': ''
     });
 
-    private domain = "https://localhost:44395/api/";
+    private formDataHeaders = new HttpHeaders({
+        'Access-Control-Allow-Origin': '*',
+        'Access-Control-Allow-Credentials': 'true',
+        'Authorization': ''
+    });
+
+    private domain = environment.apiUrl;
 
     constructor(
         private http: HttpClient,
@@ -47,8 +54,26 @@ export class HttpClientService {
         return this.httpCall(Verbs.POST, options)
     }
 
+    postFormData<T>(options: HttpOptions): Observable<T> {
+
+        this.headers = this.formDataHeaders;
+
+        return this.httpCall(Verbs.POST, options)
+    }
+
     put<T>(options: HttpOptions): Observable<T> {
         return this.httpCall(Verbs.PUT, options)
+    }
+
+    sanitizeHttpParams(params: {}): HttpParams {
+        let httpParams: HttpParams = new HttpParams();
+        Object.keys(params).forEach(param => {
+            if (params[param] || params[param] === 0) {
+                httpParams = httpParams.set(param, params[param]);
+            }
+        });
+
+        return httpParams;
     }
 
     private httpCall<T>(verb: Verbs, options: HttpOptions): Observable<T> {

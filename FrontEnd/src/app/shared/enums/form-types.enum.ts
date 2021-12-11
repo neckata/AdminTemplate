@@ -4,8 +4,12 @@ enum FormType {
     Password,
     MultiSelect,
     DropDown,
+    DropDownWithComplexOptions,
     Date,
-    DateRange
+    DateRange,
+    Slider,
+    Number,
+    AutoComplete
 }
 
 export { FormType };
